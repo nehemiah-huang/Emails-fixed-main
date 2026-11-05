@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#F2EAD9">
+  <title>Members — Ɛdan</title>
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="icon" href="/images/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;1,6..72,400&family=Space+Grotesk:wght@400;500&family=Space+Mono&display=swap">
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/tokens.css">
+  <link rel="stylesheet" href="/css/footer.css">
+  <link rel="stylesheet" href="/css/pages/members.css">
+</head>
+<body class="page-members">
+  <header class="site-nav" id="siteNav">
+    <a href="/" class="nav-logo">
+      <span>Ɛdan</span>
+    </a>
+
+    <button
+      class="nav-toggle"
+      id="navToggle"
+      aria-label="Open menu"
+      aria-expanded="false"
+      aria-controls="navLinks"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <nav class="nav-links" id="navLinks" aria-label="Main">
+      <a href="/">Home</a>
+      <a href="/labs/">Labs</a>
+      <a href="/gather/">Gather</a>
+      <a href="/stay/">Stay</a>
+      <a href="/eat/">Eat</a>
+      <a href="/grow/">Grow</a>
+      <a href="/about/">Who we are</a>
+      <a href="/contact/">Contact</a>
+    </nav>
+
+    <p class="nav-note" aria-hidden="true">
+      A space for<br>people &amp; ideas
+    </p>
+  </header>
+
+  <main class="members">
+
+    <!-- HERO: editorial cover -->
+    <section class="members__hero">
+      <img
+        class="members__hero-image"
+        src="/images/breeze-block-hero.jpg"
+        alt="Sunlit breeze-block wall with a shaded garden behind it"
+      >
+      <div class="members__hero-copy">
+        <span class="members__eyebrow">Members</span>
+        <h1 id="heroHeading">Welcome to <em>Ɛdan.</em></h1>
+        <p class="members__hero-tier" id="heroTier" hidden></p>
+      </div>
+    </section>
+
+    <!-- WELCOME + MEMBERSHIP OVERVIEW -->
+    <section class="members__membership" id="your-membership" aria-labelledby="membershipTitle">
+      <div class="members__intro">
+        <span class="members__eyebrow">Your place at Ɛdan</span>
+        <h2 id="memberGreeting">Welcome to <em>Ɛdan.</em></h2>
+        <p id="memberIntro">Checking your membership…</p>
+      </div>
+
+      <div class="members__ledger">
+        <h2 class="members__section-title" id="membershipTitle">Your membership</h2>
+
+        <dl class="members__facts">
+          <div>
+            <dt>Tier</dt>
+            <dd id="memberTier">Loading tier</dd>
+          </div>
+          <div>
+            <dt>Status</dt>
+            <dd id="memberStatus">Checking status</dd>
+          </div>
+          <div>
+            <dt>Expires</dt>
+            <dd id="memberExpiry">—</dd>
+          </div>
+        </dl>
+
+        <div class="members__ledger-actions">
+          <a class="members__text-link" href="/account/">Manage membership <span aria-hidden="true">↗</span></a>
+          <button class="members__text-button" id="memberLogout" type="button">Log out</button>
+        </div>
+
+        <div class="members__benefits" id="benefitList" aria-label="Your benefits">
+          <p class="members__eyebrow">Your benefits</p>
+          <ol>
+            <li>Community chat</li>
+            <li>Behind-the-scenes content</li>
+            <li>Monthly social invitations</li>
+            <li>10% off Small Moments and Ɛdan residencies</li>
+            <li class="members__benefit--annual">Bonus videos</li>
+            <li class="members__benefit--annual">One-to-one appointments</li>
+          </ol>
+          <p class="members__fine-print">Contact Ɛdan to confirm eligibility and how to redeem your discount.</p>
+        </div>
+
+        <div class="members__receipt" id="receiptPanel" hidden>
+          <span class="members__eyebrow">Payment receipt</span>
+          <button class="members__text-button" id="downloadReceipt" type="button">
+            Download receipt (PDF) <span aria-hidden="true">↗</span>
+          </button>
+          <p class="members__receipt-note" id="receiptMessage" role="status" aria-live="polite"></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SHORTCUTS: image-led member index -->
+    <nav class="members__index members__gated" aria-labelledby="aroundEdanTitle">
+      <div class="members__index-intro">
+        <span class="members__eyebrow">Members</span>
+        <h2 id="aroundEdanTitle">Around Ɛdan</h2>
+        <p>Explore what’s happening, get involved and make the most of your membership.</p>
+      </div>
+
+      <ol class="members__index-grid">
+        <li>
+          <a class="members__index-card" href="#community" aria-label="Go to Community: Talk with the members">
+            <img src="https://images.pexels.com/photos/35203995/pexels-photo-35203995.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" alt="People talking together around a table" loading="lazy">
+            <span class="members__index-num">01</span>
+            <span class="members__index-card-copy"><strong>Community</strong><span>Talk with the members</span></span>
+          </a>
+        </li>
+        <li>
+          <a class="members__index-card" href="#in-process" aria-label="Go to In Process: Work in progress">
+            <img src="/images/house-two-storey.jpg" alt="Creative studio with materials and wooden furniture" loading="lazy">
+            <span class="members__index-num">02</span>
+            <span class="members__index-card-copy"><strong>In Process</strong><span>Work in progress</span></span>
+          </a>
+        </li>
+        <li>
+          <a class="members__index-card" href="#gather" aria-label="Go to Gather: Gatherings and events">
+            <img src="https://images.pexels.com/photos/31729402/pexels-photo-31729402.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" alt="People gathering outside an architectural building" loading="lazy">
+            <span class="members__index-num">03</span>
+            <span class="members__index-card-copy"><strong>Gather</strong><span>Gatherings and events</span></span>
+          </a>
+        </li>
+        <li>
+          <a class="members__index-card" href="#research" aria-label="Go to Research: Notes and publications">
+            <img src="https://images.pexels.com/photos/7963813/pexels-photo-7963813.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" alt="Books being held and discussed in sunlight" loading="lazy">
+            <span class="members__index-num">04</span>
+            <span class="members__index-card-copy"><strong>Research</strong><span>Notes and publications</span></span>
+          </a>
+        </li>
+        <li class="members__benefit--annual">
+          <a class="members__index-card" href="#bonus-videos" aria-label="Go to Bonus content: Annual members">
+            <img src="https://images.pexels.com/photos/3502494/pexels-photo-3502494.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" alt="Quiet library and creative space with natural light" loading="lazy">
+            <span class="members__index-num">05</span>
+            <span class="members__index-card-copy"><strong>Bonus content</strong><span>Annual members</span></span>
+          </a>
+        </li>
+        <li class="members__benefit--annual">
+          <a class="members__index-card" href="#appointments" aria-label="Go to Appointments: Annual members">
+            <img src="https://images.pexels.com/photos/20838213/pexels-photo-20838213.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" alt="Welcoming meeting room with a table and natural light" loading="lazy">
+            <span class="members__index-num">06</span>
+            <span class="members__index-card-copy"><strong>Appointments</strong><span>Annual members</span></span>
+          </a>
+        </li>
+      </ol>
+    </nav>
+
+    <!-- COMMUNITY -->
+    <section class="members__block members__gated members__block--community" id="community" aria-labelledby="communityTitle">
+      <h2 class="members__visually-hidden" id="communityTitle">Community</h2>
+      <header class="members__community-hero">
+        <img src="/images/comm.avif" alt="Members talking together at Ɛdan" loading="lazy">
+        <div class="members__community-hero-copy">
+          <span class="members__eyebrow">01 / Community</span>
+          <h2>Talk with the members.</h2>
+          <p>A warm space for ideas, questions and everyday conversation across the Ɛdan community.</p>
+        </div>
+      </header>
+
+      <section class="members__chat-panel" id="communityChatPanel" aria-label="Ɛdan community chat" hidden>
+        <aside class="members__community-sidebar" aria-label="Community navigation">
+          <a class="members__community-back" href="#aroundEdanTitle">← Back to Members</a>
+          <div class="members__community-brand"><span>Ɛdan</span><span>Members</span></div>
+          <div class="members__community-heading">
+            <span class="members__eyebrow">Members</span>
+            <h3>Community</h3>
+            <p>Talk with the members</p>
+          </div>
+          <label class="members__community-search">
+            <span aria-hidden="true">⌕</span>
+            <input id="chatSearchInput" type="search" placeholder="Search messages…" aria-label="Search messages">
+          </label>
+          <nav class="members__community-channels" aria-label="Community channels">
+            <a class="is-active" href="#community"><span>♧</span> All conversations <b>12</b></a>
+            <a href="#community"><span>◌</span> General <b>5</b></a>
+            <a href="#gather"><span>□</span> Events <b>2</b></a>
+            <a href="#in-process"><span>▱</span> Projects</a>
+            <a href="#research"><span>♧</span> Ideas <b>1</b></a>
+            <a href="#community"><span>♧</span> Introductions</a>
+          </nav>
+          <div class="members__community-profile">
+            <img src="/images/founder-carina.png" alt="">
+            <div><strong id="chatProfileName">Member</strong><span><i></i> Online</span></div>
+            <button type="button" id="chatProfileButton" aria-label="Change username">⚙</button>
+          </div>
+        </aside>
+
+        <aside class="members__conversation-list" id="communityConversationList" aria-label="Recent conversations">
+          <div class="members__conversation-list-head"><span>Conversations</span></div>
+          <div id="chatConversationSummary"></div>
+        </aside>
+
+        <div class="members__chat-main">
+          <header class="members__chat-header">
+            <img class="members__chat-avatar" src="/images/comm.avif" alt="">
+            <div><h3>General Community</h3><p>A space for open discussion, ideas and connection.</p><span><i></i> Live community conversation</span></div>
+            <button class="members__chat-conversations-toggle" id="chatConversationsToggle" type="button" aria-expanded="false" aria-controls="communityConversationList">Conversations</button>
+            <button class="members__chat-more" type="button" aria-label="More conversation options">⋮</button>
+          </header>
+
+          <div class="members__chat-messages" id="chatMessages" role="log" aria-live="polite" aria-relevant="additions" aria-label="Community messages">
+            <p class="members__chat-loading" id="chatLoading">Making room at the table…</p>
+          </div>
+
+          <p class="members__chat-notice" id="chatNotice" role="status"></p>
+
+          <div class="members__chat-identity" id="chatIdentity" hidden>
+            <p class="members__chat-kicker">Before you join in</p>
+            <h4>What should we call you?</h4>
+            <p>Choose a username for your messages. You can change it later.</p>
+            <form id="chatUsernameForm" class="members__chat-username-form">
+              <label for="chatUsername">Your username</label>
+              <input id="chatUsername" name="username" type="text" minlength="3" maxlength="24" pattern="[A-Za-z0-9_]+" autocomplete="nickname" placeholder="e.g. gardenfriend" required>
+              <small>3–24 characters. Letters, numbers and underscores.</small>
+              <button type="submit" id="saveChatUsername">Save username <span aria-hidden="true">↗</span></button>
+            </form>
+          </div>
+
+          <div class="members__chat-composer" id="chatComposer" hidden>
+            <div class="members__chat-composer-top"><span id="chatCurrentUsername"></span><button type="button" id="changeChatUsername">Change username</button></div>
+            <form id="chatMessageForm" class="members__chat-form">
+              <textarea id="chatMessageInput" name="message" rows="1" maxlength="1000" placeholder="Write a message…" aria-label="Write a message" required></textarea>
+              <button class="members__chat-emoji" id="chatEmoji" type="button" aria-label="Choose an emoji" title="Choose an emoji">☺</button>
+              <button class="members__chat-send" id="chatSendButton" type="submit" aria-label="Send message">↗</button>
+            </form>
+            <div class="members__chat-emoji-picker" id="chatEmojiPicker" role="dialog" aria-label="Choose an emoji" hidden></div>
+            <p class="members__chat-footnote">Enter to send · Shift + Enter for a new line · Be kind.</p>
+          </div>
+        </div>
+
+        <aside class="members__conversation-details" aria-label="Conversation details">
+          <h3>Conversation details</h3>
+          <p>A space for open discussion, ideas and connection.</p>
+          <h4>About this conversation</h4>
+          <p>Messages are shared with active Ɛdan members and update live as people join the conversation.</p>
+        </aside>
+      </section>
+    </section>
+
+    <!-- IN PROCESS -->
+    <section class="members__block members__gated members__block--process" id="in-process" aria-labelledby="processTitle">
+      <div class="members__process-page">
+        <header class="members__process-hero">
+          <img src="/images/house-two-storey.jpg" alt="Creative work in progress across a studio table" loading="lazy">
+          <div class="members__process-hero-copy">
+            <span class="members__eyebrow">02 / In Process</span>
+            <h2 id="processTitle">Work in progress.</h2>
+            <p>An ongoing collection of ideas, experiments and projects taking shape at Ɛdan.</p>
+          </div>
+        </header>
+
+        <p class="members__empty" id="processEmpty" hidden>No work in progress has been shared yet.</p>
+
+        <section class="members__process-featured" id="processFeatured" aria-labelledby="featuredProcessTitle">
+          <div class="members__process-featured-media" id="featuredProcessMedia"><img src="/images/breeze-block-detail.webp" alt="A courtyard study in progress"></div>
+          <div class="members__process-featured-copy">
+            <span class="members__process-category" id="featuredProcessCategory">Spatial research</span>
+            <h3 id="featuredProcessTitle">The Osu Courtyard Project</h3>
+            <p id="featuredProcessSummary">Exploring the social life of space in Accra's historic neighbourhood.</p>
+            <div class="members__process-meta"><span id="featuredProcessUpdated">Updated: Apr 2025</span><span id="featuredProcessProgress">60% complete</span></div>
+            <a class="members__process-link" id="featuredProcessLink" href="#in-process">View project <span aria-hidden="true">→</span></a>
+          </div>
+        </section>
+
+        <section class="members__process-section" aria-labelledby="ongoingProcessTitle">
+          <div class="members__process-section-heading"><h3 id="ongoingProcessTitle">Ongoing projects</h3><span>From the studio <span aria-hidden="true">→</span></span></div>
+          <div class="members__process-project-grid" id="processProjectList">
+            <article class="members__process-project"><img src="/images/breeze-block-terracotta.jpg" alt="Hands working with clay"><div class="members__process-project-copy"><span class="members__process-category">Material studies</span><h4>Clay in the City</h4><p>Exploring local materials for contemporary use.</p><div class="members__process-meta"><span>Mar 2025</span><span>In progress</span></div></div></article>
+            <article class="members__process-project"><img src="/images/architectural_sketch2.png" alt="Spatial sketches on paper"><div class="members__process-project-copy"><span class="members__process-category">Research</span><h4>Spatial Experiments</h4><p>Testing spatial ideas through low-cost models.</p><div class="members__process-meta"><span>Apr 2025</span><span>In progress</span></div></div></article>
+            <article class="members__process-project"><img src="/images/accra-map.png" alt="An urban map of Accra"><div class="members__process-project-copy"><span class="members__process-category">Urban studies</span><h4>Notes from the City</h4><p>Observations and insights from Accra.</p><div class="members__process-meta"><span>Mar 2025</span><span>Ongoing</span></div></div></article>
+            <article class="members__process-project"><img src="/images/model-guesthouse.jpg" alt="An architectural model"><div class="members__process-project-copy"><span class="members__process-category">Design exploration</span><h4>Studio Explorations</h4><p>Prototyping new spatial possibilities.</p><div class="members__process-meta"><span>Apr 2025</span><span>In progress</span></div></div></article>
+          </div>
+        </section>
+
+        <div class="members__process-lower-grid">
+          <section class="members__process-section members__process-updates" aria-labelledby="processUpdatesTitle">
+            <div class="members__process-section-heading"><h3 id="processUpdatesTitle">Project updates</h3><span>Studio journal</span></div>
+            <div class="members__process-update-list" id="processUpdateList">
+              <article class="members__process-update"><img src="/images/sharing.webp" alt="Members visiting a studio"><div class="members__process-update-copy"><span class="members__process-category">Studio update</span><h4>Studio visit: Accra Urban Lab</h4><p>A recent visit sparked new ideas for our ongoing work.</p><div class="members__process-meta"><span>Apr 10, 2025</span></div></div></article>
+              <article class="members__process-update"><img src="/images/architectural sketch.png" alt="Material tests and drawings"><div class="members__process-update-copy"><span class="members__process-category">Studio update</span><h4>Material tests underway</h4><p>We are testing local materials for the next phase of our research.</p><div class="members__process-meta"><span>Mar 28, 2025</span></div></div></article>
+            </div>
+          </section>
+          <section class="members__process-section members__process-video-section" aria-labelledby="processVideoTitle">
+            <div class="members__process-section-heading"><h3 id="processVideoTitle">Featured video</h3><span>Research in motion</span></div>
+            <div id="processVideoList"><article class="members__process-video"><div class="members__process-video-media" data-video-path="/videos/replace-with-process-video.mp4"><img src="/images/garden.jpg" alt="The Ɛdan courtyard"><span class="members__process-play">▶</span><span class="members__process-duration">12:34</span></div><div class="members__process-video-copy"><h4>Research in Practice</h4><p>A look inside our studio and ongoing research at Ɛdan.</p></div></article></div>
+          </section>
+        </div>
+      </div>
+    </section>
+
+    <!-- GATHER -->
+    <section class="members__block members__gated members__block--gather" id="gather" aria-labelledby="gatherTitle">
+      <div class="members__gather-page">
+        <header class="members__gather-hero">
+          <img src="/images/garden-eat.jpg" alt="Members gathered outside at Ɛdan" loading="lazy">
+          <div class="members__gather-hero-copy">
+            <span class="members__eyebrow">03 / Gather</span>
+            <h2 id="gatherTitle">Come together.</h2>
+            <p>A space for conversations, shared experiences and moments that bring our community together.</p>
+          </div>
+        </header>
+
+        <p class="members__empty" id="gatheringEmpty" hidden>No gatherings have been published yet.</p>
+
+        <section class="members__gather-featured" id="gatherFeatured" aria-labelledby="featuredGatherTitle">
+          <div class="members__gather-featured-media" id="featuredGatherMedia"><img src="/images/garden-eat.jpg" alt="Members gathered outside at Ɛdan"></div>
+          <div class="members__gather-featured-copy">
+            <span class="members__gather-category" id="featuredGatherCategory">Featured gathering</span>
+            <h3 id="featuredGatherTitle">Conversations Around the City</h3>
+            <p id="featuredGatherDescription">A dialogue on urban life, creativity and belonging in Accra.</p>
+            <div class="members__gather-meta"><span id="featuredGatherDate">▦ Coming soon</span><span id="featuredGatherLocation">⌖ Ɛdan, Osu</span></div>
+            <a class="members__gather-link" id="featuredGatherLink" href="#gather">Event details <span aria-hidden="true">→</span></a>
+          </div>
+        </section>
+
+        <section class="members__gather-section" aria-labelledby="upcomingGatherTitle">
+          <div class="members__gather-section-heading"><h3 id="upcomingGatherTitle">Upcoming gatherings</h3><span>View all →</span></div>
+          <div class="members__gather-upcoming" id="gatheringList" aria-live="polite">
+            <article class="members__gather-card"><img src="/images/breeze-block-terracotta.jpg" alt="Hands working with materials"><div class="members__gather-card-copy"><span class="members__gather-category">Workshop</span><h4>Material Encounters</h4><p>Explore materials, techniques and possibilities.</p><div class="members__gather-meta"><span>▦ Coming soon</span><span>⌖ Ɛdan, Osu</span></div><a class="members__gather-link" href="#gather">Event details <span aria-hidden="true">→</span></a></div></article>
+            <article class="members__gather-card"><img src="/images/sharing.webp" alt="People gathered around a shared table"><div class="members__gather-card-copy"><span class="members__gather-category">Talk</span><h4>Shared Tables</h4><p>Food, ideas and community around one long table.</p><div class="members__gather-meta"><span>▦ Coming soon</span><span>⌖ Ɛdan, Osu</span></div><a class="members__gather-link" href="#gather">Event details <span aria-hidden="true">→</span></a></div></article>
+            <article class="members__gather-card"><img src="/images/garden.jpg" alt="A creative gathering in the courtyard"><div class="members__gather-card-copy"><span class="members__gather-category">Gathering</span><h4>Creative Research Gatherings</h4><p>A community forum for creative researchers and practitioners.</p><div class="members__gather-meta"><span>▦ Coming soon</span><span>⌖ Ɛdan, Osu</span></div><a class="members__gather-link" href="#gather">Event details <span aria-hidden="true">→</span></a></div></article>
+          </div>
+        </section>
+
+        <div class="members__gather-lower-grid">
+          <section class="members__gather-section" aria-labelledby="pastGatherTitle">
+            <div class="members__gather-section-heading"><h3 id="pastGatherTitle">Past gatherings</h3><span>View archive →</span></div>
+            <div class="members__gather-archive" id="gatherArchive">
+              <article class="members__gather-archive-item"><img src="/images/our story people.jpg" alt="Members in conversation"><div class="members__gather-archive-copy"><h4>Open Studio Sessions</h4><span>A day of shared practice and conversation.</span></div></article>
+              <article class="members__gather-archive-item"><img src="/images/eat-hero.jpg" alt="A shared meal at Ɛdan"><div class="members__gather-archive-copy"><h4>A Table for Many Voices</h4><span>An evening of food, stories and new connections.</span></div></article>
+              <article class="members__gather-archive-item"><img src="/images/dye-pits.jpg" alt="Hands working with natural colour"><div class="members__gather-archive-copy"><h4>Making Together</h4><span>Hands, materials, and a few hours in the studio.</span></div></article>
+            </div>
+          </section>
+          <section class="members__gather-section" aria-labelledby="gatherMomentsTitle">
+            <div class="members__gather-section-heading"><h3 id="gatherMomentsTitle">Community moments</h3><span>At Ɛdan</span></div>
+            <div class="members__gather-moments" id="gatherMoments">
+              <figure class="members__gather-moment"><img src="/images/architectural sketch.png" alt="Ideas taking shape"><figcaption>Ideas taking shape.</figcaption></figure>
+              <figure class="members__gather-moment"><img src="/images/sharing.webp" alt="A slower afternoon at Ɛdan"><figcaption>A slower afternoon at Ɛdan.</figcaption></figure>
+              <figure class="members__gather-moment"><img src="/images/garden-eat.jpg" alt="The courtyard in conversation"><figcaption>The courtyard in conversation.</figcaption></figure>
+            </div>
+          </section>
+        </div>
+      </div>
+    </section>
+
+    <!-- RESEARCH -->
+    <section class="members__block members__gated members__block--research" id="research" aria-labelledby="researchTitle">
+      <div class="members__research-page">
+        <header class="members__research-hero">
+          <img src="/images/our story intro.jpg" alt="Research notes and observation at Ɛdan" loading="lazy">
+          <div class="members__research-hero-copy">
+            <span class="members__eyebrow">04 / Research</span>
+            <h2 id="researchTitle">Ideas in the making.</h2>
+            <p>Notes, observations and research exploring the relationships between people, space and the city.</p>
+          </div>
+        </header>
+
+        <p class="members__empty" id="researchEmpty" hidden>No research has been published yet.</p>
+        <div class="members__research-list" id="researchList" aria-live="polite">
+          <article class="members__research-featured">
+            <img src="/images/accra-map.png" alt="An urban view of Accra" loading="lazy">
+            <div class="members__research-featured-copy">
+              <span class="members__research-category">Featured research</span>
+              <h3>Rethinking the spaces between us</h3>
+              <p>An exploration of how people, place and possibility intersect in the contemporary city.</p>
+              <div class="members__research-meta"><span>⌖ Ɛdan Research</span><span>▦ Apr 2025</span></div>
+              <a class="members__research-link" href="#research">Read research <span aria-hidden="true">→</span></a>
+            </div>
+          </article>
+
+          <section class="members__research-archive" aria-labelledby="researchArchiveTitle">
+            <div class="members__research-section-heading"><h3 id="researchArchiveTitle">Research archive</h3><span>Explore by theme →</span></div>
+            <div class="members__research-grid">
+              <article class="members__research-card"><img src="/images/our story people.jpg" alt="Everyday life in the city" loading="lazy"><div class="members__research-card-copy"><span class="members__research-category">Urban life</span><h4>The Everyday City</h4><p>Observations of ordinary urban life in Accra.</p><div class="members__research-card-meta">Apr 2025 · <a href="#research">Read more →</a></div></div></article>
+              <article class="members__research-card"><img src="/images/breeze-block-detail.jpg" alt="A breeze-block wall and shared space" loading="lazy"><div class="members__research-card-copy"><span class="members__research-category">Architecture and space</span><h4>Spaces of Belonging</h4><p>Exploring how people relate to shared spaces.</p><div class="members__research-card-meta">Mar 2025 · <a href="#research">Read more →</a></div></div></article>
+              <article class="members__research-card"><img src="/images/dye-pits.jpg" alt="Materials and making" loading="lazy"><div class="members__research-card-copy"><span class="members__research-category">Materials and making</span><h4>Material and Memory</h4><p>Documenting materials, craft and place.</p><div class="members__research-card-meta">Feb 2025 · <a href="#research">Read more →</a></div></div></article>
+              <article class="members__research-card"><img src="/images/accra-map-lines.png" alt="A map of Accra" loading="lazy"><div class="members__research-card-copy"><span class="members__research-category">Culture and identity</span><h4>Notes from Accra</h4><p>Observations and reflections from the city.</p><div class="members__research-card-meta">Jan 2025 · <a href="#research">Read more →</a></div></div></article>
+            </div>
+          </section>
+
+          <div class="members__research-bottom">
+            <div class="members__research-themes"><h3>Research themes</h3><div><a href="#research">Urban Life</a><a href="#research">Architecture and Space</a><a href="#research">Culture and Identity</a><a href="#research">Materials and Making</a><a href="#research">Community and Belonging</a></div></div>
+            <article class="members__research-care"><img src="/images/sharing.webp" alt="A community research conversation" loading="lazy"><div><span class="members__research-category">Community and belonging</span><h3>Practices of Care</h3><p>Research into community, space and belonging.</p><a class="members__research-link" href="#research">Read research <span aria-hidden="true">→</span></a></div></article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ANNUAL: BONUS VIDEOS -->
+    <section class="members__block members__gated members__block--annual members__block--videos" id="bonus-videos" aria-labelledby="videosTitle">
+      <div class="members__bonus-page">
+        <header class="members__bonus-hero">
+          <img src="/images/our story image.webp" alt="Creative work taking shape inside Ɛdan" loading="lazy">
+          <div class="members__bonus-hero-copy">
+            <span class="members__eyebrow">05 / Bonus content</span>
+            <h2 id="videosTitle">A little further in.</h2>
+            <p>Films, conversations and research offering a closer look at the ideas, people and processes shaping Ɛdan.</p>
+          </div>
+        </header>
+
+        <div class="members__locked" data-annual-lock hidden>
+          <span class="members__locked-frame" aria-hidden="true">Annual members</span>
+          <p>This collection is reserved for active annual members. Your monthly membership includes everything else in the Members area.</p>
+        </div>
+        <div data-annual-content>
+          <div class="members__videos members__bonus-content" id="bonusVideoList" aria-live="polite">
+            <p class="members__empty" id="bonusVideoEmpty">No bonus videos have been published yet.</p>
+            <article class="members__bonus-featured">
+              <div class="members__bonus-featured-media" data-video-path="/videos/replace-with-bonus-content-video.mp4"><img src="/images/garden.jpg" alt="A recorded conversation in the Ɛdan courtyard" loading="lazy"><span class="members__bonus-play" aria-hidden="true">▶</span></div>
+              <div class="members__bonus-featured-copy"><span class="members__bonus-category">Film</span><h3>Inside the work</h3><p>A closer look at the people, spaces and ideas behind Ɛdan.</p><div class="members__bonus-meta"><span>◷ 12 min</span></div><a class="members__bonus-link" href="#bonus-videos">Watch now <span aria-hidden="true">→</span></a></div>
+            </article>
+            <section class="members__bonus-collections" aria-labelledby="bonusCollectionsTitle">
+              <div class="members__bonus-heading"><h3 id="bonusCollectionsTitle">Exclusive content collections</h3></div>
+              <div class="members__bonus-grid">
+                <article class="members__bonus-card"><img src="/images/comm.avif" alt="A camera documenting Ɛdan" loading="lazy"><span class="members__bonus-category">Films and documentaries</span><h4>A Day Around Ɛdan</h4><p>A visual journey through our space and community.</p><a class="members__bonus-link" href="#bonus-videos">Explore collection <span aria-hidden="true">→</span></a></article>
+                <article class="members__bonus-card"><img src="/images/sharing.webp" alt="A conversation in the courtyard" loading="lazy"><span class="members__bonus-category">Conversations</span><h4>Conversations on Making</h4><p>Voices, ideas and perspectives from our community.</p><a class="members__bonus-link" href="#bonus-videos">Explore collection <span aria-hidden="true">→</span></a></article>
+                <article class="members__bonus-card"><img src="/images/breeze-block-terracotta.jpg" alt="Hands working with materials" loading="lazy"><span class="members__bonus-category">Behind the scenes</span><h4>The Work Behind the Work</h4><p>A glimpse into the processes that shape our work.</p><a class="members__bonus-link" href="#bonus-videos">Explore collection <span aria-hidden="true">→</span></a></article>
+                <article class="members__bonus-card"><img src="/images/architectural sketch.png" alt="Research drawings and notes" loading="lazy"><span class="members__bonus-category">Extended research</span><h4>Material Experiments</h4><p>Deeper research and additional documentation.</p><a class="members__bonus-link" href="#bonus-videos">Explore collection <span aria-hidden="true">→</span></a></article>
+              </div>
+            </section>
+            <aside class="members__bonus-note"><span aria-hidden="true">♙</span><div><strong>This collection is exclusive to annual members.</strong><p>Enjoy deeper access to Ɛdan's work, research and creative process.</p></div></aside>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ANNUAL: APPOINTMENTS -->
+    <section class="members__block members__gated members__block--annual members__block--appointments" id="appointments" aria-labelledby="appointmentsTitle">
+      <div class="members__appointment-page">
+
+        <a class="members__appointment-back" href="#aroundEdanTitle">← Back to Members</a>
+
+        <!-- Hero -->
+        <header class="members__appointment-hero">
+          <img src="/images/our story people.jpg" alt="A thoughtful conversation at Ɛdan" loading="lazy">
+          <div class="members__appointment-hero-copy">
+            <span class="members__eyebrow">06 / Appointments</span>
+            <h2 id="appointmentsTitle">Let's make time.</h2>
+            <p>Book a conversation, consultation or working session with the Ɛdan team.</p>
+          </div>
+        </header>
+
+        <!-- Annual-only lock -->
+        <div data-annual-lock hidden class="members__appointment-locked">
+          <span class="members__eyebrow">Annual members</span>
+          <h3>One-to-one time is part of annual membership.</h3>
+          <p>Active annual members can choose a conversation and request an available time below.</p>
+        </div>
+
+        <div data-annual-content>
+
+          <!-- Appointment types -->
+          <section class="members__appt-types-section" aria-labelledby="appointmentTypesTitle">
+            <div class="members__appt-section-head">
+              <h3 id="appointmentTypesTitle">Appointment Types</h3>
+            </div>
+            <div class="members__appt-type-grid" id="appointmentTypeList">
+              <p class="members__appt-loading">Loading appointment types…</p>
+            </div>
+          </section>
+
+          <!-- Booking form -->
+          <section class="members__appt-booking-section" aria-labelledby="bookAppointmentTitle">
+            <div class="members__appt-section-head">
+              <h3 id="bookAppointmentTitle">Book an Appointment</h3>
+            </div>
+
+            <!-- Step progress -->
+            <div class="members__appt-steps" aria-label="Booking steps" id="apptStepBar">
+              <span class="members__appt-step is-active" data-step="1"><span class="members__appt-step-n">1</span><span class="members__appt-step-label">Choose appointment</span></span>
+              <span class="members__appt-step-line" aria-hidden="true"></span>
+              <span class="members__appt-step" data-step="2"><span class="members__appt-step-n">2</span><span class="members__appt-step-label">Choose date</span></span>
+              <span class="members__appt-step-line" aria-hidden="true"></span>
+              <span class="members__appt-step" data-step="3"><span class="members__appt-step-n">3</span><span class="members__appt-step-label">Choose time</span></span>
+              <span class="members__appt-step-line" aria-hidden="true"></span>
+              <span class="members__appt-step" data-step="4"><span class="members__appt-step-n">4</span><span class="members__appt-step-label">Your details</span></span>
+              <span class="members__appt-step-line" aria-hidden="true"></span>
+              <span class="members__appt-step" data-step="5"><span class="members__appt-step-n">5</span><span class="members__appt-step-label">Review &amp; confirm</span></span>
+            </div>
+
+            <!-- Two-column layout -->
+            <div class="members__appt-booking-body">
+              <form id="appointmentForm" class="members__appt-form" novalidate>
+                <fieldset class="members__appt-fieldset" id="apptStepType">
+                  <legend>Select an appointment type</legend>
+                  <div id="appointmentTypeList2" class="members__appt-radio-list"></div>
+                </fieldset>
+
+                <fieldset class="members__appt-fieldset" id="apptStepDate" hidden>
+                  <legend>Choose a date</legend>
+                  <div class="members__appt-calendar" id="appointmentCalendar" aria-label="Available appointment dates"></div>
+                  <select id="appointmentDate" required aria-label="Available dates" hidden>
+                    <option value="">Choose a date</option>
+                  </select>
+                  <p class="members__appt-calendar-note">Choose any future date within the next six months. The Ɛdan team will confirm the exact time by email.</p>
+                </fieldset>
+
+                <fieldset class="members__appt-fieldset" id="apptStepTime" hidden>
+                  <legend>Choose a preferred time</legend>
+                  <div id="appointmentSlotList" class="members__appt-slot-list"></div>
+                  <input type="hidden" id="appointmentSlot">
+                </fieldset>
+
+                <fieldset class="members__appt-fieldset" id="apptStepDetails" hidden>
+                  <legend>Your details</legend>
+                  <div class="members__appt-fields">
+                    <label>Your name <input id="appointmentName" type="text" maxlength="120" required autocomplete="name"></label>
+                    <label>Email address <input id="appointmentEmail" type="email" maxlength="254" required autocomplete="email"></label>
+                    <label>WhatsApp number <input id="appointmentWhatsapp" type="tel" maxlength="40" placeholder="Optional" autocomplete="tel"></label>
+                    <label class="members__appt-field--full">What would you like to discuss? <textarea id="appointmentNote" rows="4" maxlength="2000" placeholder="Optional — share anything helpful before we meet"></textarea></label>
+                  </div>
+                </fieldset>
+
+                <fieldset class="members__appt-fieldset" id="apptStepReview" hidden>
+                  <legend>Review &amp; confirm</legend>
+                  <div class="members__appt-review" id="appointmentReview">Choose an appointment type, date and time to review your request.</div>
+                </fieldset>
+
+                <div class="members__appt-nav" id="apptNav">
+                  <button class="members__appt-btn--ghost" type="button" id="apptBack" hidden>← Back</button>
+                  <button class="members__appt-btn--next" type="button" id="apptNext">Continue →</button>
+                  <button class="members__appt-btn--submit" id="appointmentSubmit" type="submit" hidden disabled>Confirm booking request →</button>
+                </div>
+
+                <p class="members__appt-status" id="appointmentStatus" role="status" aria-live="polite"></p>
+              </form>
+
+              <aside class="members__appt-aside" aria-hidden="true">
+                <img src="/images/breeze-block-detail.webp" alt="">
+                <div class="members__appt-aside-copy">
+                  <p>Take your time.<br>We're here to help.</p>
+                </div>
+              </aside>
+            </div>
+          </section>
+
+          <!-- Confirmation -->
+          <div class="members__appt-confirmation" id="appointmentConfirmation" hidden>
+            <div class="members__appt-confirmation-inner">
+              <span class="members__eyebrow">Request received</span>
+              <h3>We've made room for this conversation.</h3>
+              <p>Your request is recorded. The Ɛdan team will confirm the time and send details by email.</p>
+              <dl id="appointmentConfirmationDetails"></dl>
+              <a class="members__appt-return" href="#aroundEdanTitle">Return to Members ↗</a>
+            </div>
+          </div>
+
+          <!-- Upcoming appointments -->
+          <section class="members__appt-upcoming-section" aria-labelledby="upcomingAppointmentsTitle">
+            <div class="members__appt-upcoming-row">
+              <div class="members__appt-upcoming-block">
+                <div class="members__appt-section-head members__appt-section-head--no-border">
+                  <span class="members__appt-cal-icon" aria-hidden="true">▦</span>
+                  <h3 id="upcomingAppointmentsTitle">Your Upcoming Appointments</h3>
+                </div>
+                <div id="appointmentList">
+                  <div class="members__appt-empty">
+                    <span class="members__appt-empty-icon" aria-hidden="true">□</span>
+                    <strong>You have no upcoming appointments.</strong>
+                    <p>Book an appointment to get started.</p>
+                    <a class="members__appt-btn--sm" href="#bookAppointmentTitle">Book an appointment →</a>
+                  </div>
+                </div>
+              </div>
+              <aside class="members__appt-help">
+                <span class="members__appt-help-icon" aria-hidden="true">☊</span>
+                <div>
+                  <strong>Need Help?</strong>
+                  <p>Have a question or need to reschedule? Get in touch with the Ɛdan team.</p>
+                  <a class="members__appt-help-link" href="/contact/">Contact us →</a>
+                </div>
+              </aside>
+            </div>
+          </section>
+
+        </div><!-- /data-annual-content -->
+      </div>
+    </section>
+
+    <!-- CLOSING -->
+    <section class="members__final">
+      <img src="/images/house-two-storey.jpg" alt="The two-storey house at Ɛdan in the afternoon" loading="lazy">
+      <div class="members__final-copy">
+        <h2>A place to belong,<br><em>a space to grow.</em></h2>
+        <a class="members__text-link" href="/account/">Manage your membership <span aria-hidden="true">↗</span></a>
+      </div>
+    </section>
+
+    <dialog class="members__reader" id="researchReader" aria-labelledby="readerTitle">
+      <div class="members__reader-inner">
+        <header class="members__reader-head">
+          <span class="members__research-category" id="readerCategory"></span>
+          <button class="members__reader-close" id="readerClose" type="button" aria-label="Close reader">×</button>
+        </header>
+        <h2 id="readerTitle"></h2>
+        <div class="members__reader-body" id="readerBody"></div>
+      </div>
+    </dialog>
+
+    <p class="members__message" id="membersMessage" role="status" aria-live="polite"></p>
+  </main>
+
+  <div data-include="/partials/nav-footer.html"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="/js/members.js"></script>
+  <script src="/js/members-chat.js"></script>
+  <script src="/js/members-content.js"></script>
+  <script src="/js/members-appointments.js"></script>
+  <script src="/js/main.js"></script>
+  <script src="/js/nav.js"></script>
+  <script src="/js/include.js"></script>
+
+</body>
+</html>

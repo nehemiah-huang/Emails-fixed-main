@@ -1,0 +1,234 @@
+/* ============================================
+   ƐDAN | ABOUT PAGE
+   Hero + Friends are family
+   ============================================ */
+
+/* --------------------------------------------
+   Shared typography scale
+   -------------------------------------------- */
+
+:root {
+  --about-title-size: clamp(3.5rem, 5vw, 5rem);
+  --about-heading-size: clamp(2.5rem, 3.5vw, 3.5rem);
+  --about-body-size: 1rem;
+  --about-label-size: 0.85rem;
+}
+
+/* --------------------------------------------
+   HERO — Behind the scenes
+   -------------------------------------------- */
+
+.hero--about {
+  height: clamp(32rem, 40vw, 46rem);
+  min-height: 0;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.hero--about .hero-scrim {
+  background: linear-gradient(
+    180deg,
+    rgba(35, 30, 24, 0.34) 0%,
+    rgba(35, 30, 24, 0.26) 100%
+  );
+}
+
+.hero--about .hero-media img {
+  opacity: 1;
+}
+
+.hero--about .hero-content {
+  width: 100%;
+  max-width: none;
+  padding: clamp(1rem, 2vw, 7rem) var(--gutter) 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero--about .hero-eyebrow {
+  margin: 0 0 clamp(1.5rem, 2.5vw, 2.5rem);
+  font-size: 2rem;
+  letter-spacing: 0.12em;
+  line-height: 1.5;
+  text-transform: uppercase;
+  opacity: 0.9;
+}
+
+.hero--about .hero-title {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: clamp(3rem, 2vw, 6rem);
+  font-weight: 400;
+  line-height: 0.98;
+  letter-spacing: -0.065em;
+  white-space: nowrap;
+}
+
+.hero--about .hero-sub {
+  width: 100%;
+  max-width: 60rem;
+  margin: clamp(1.75rem, 2.5vw, 2.5rem) 0 0;
+  font-size: clamp(1.1rem, 1.5vw, 1.35rem);
+  font-weight: 300;
+  line-height: 1.7;
+  text-wrap: balance;
+  color: rgba(250, 245, 233, 0.92);
+}
+
+/* --------------------------------------------
+   FRIENDS ARE FAMILY
+   -------------------------------------------- */
+
+.ff {
+  padding: clamp(4rem, 7vw, 6rem) clamp(1.5rem, 4vw, 4rem);
+  background: var(--paper, #f3ecdf);
+  color: var(--ink, #302e29);
+}
+
+.ff__inner {
+  width: 100%;
+  max-width: 1440px;
+  margin-inline: auto;
+}
+
+.ff__rule {
+  display: none;
+}
+
+.ff__eyebrow {
+  margin: 0 0 1.75rem;
+  text-align: center;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: var(--about-heading-size);
+  font-weight: 400;
+  letter-spacing: -0.065em;
+  line-height: 1.05;
+}
+
+.ff__note {
+  width: 100%;
+  max-width: 850px;
+  margin: 0 auto clamp(3rem, 5vw, 4.5rem);
+  text-align: center;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: var(--about-body-size);
+  font-weight: 300;
+  line-height: 1.8;
+  color: var(--pencil, #82796a);
+}
+
+.ff__list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  column-gap: clamp(1.5rem, 3vw, 3rem);
+  row-gap: 2rem;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.ff__list li {
+  margin: 0;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: var(--about-body-size);
+  font-weight: 400;
+  letter-spacing: -0.025em;
+  line-height: 1.5;
+  transition: color 0.2s ease;
+}
+
+.ff__list li:hover {
+  color: #a45e43;
+}
+
+/* --------------------------------------------
+   TABLET
+   -------------------------------------------- */
+
+@media (max-width: 900px) {
+  .hero--about .hero-title {
+    font-size: clamp(3rem, 5.5vw, 4.5rem);
+  }
+
+  .ff__list {
+    justify-content: center;
+    column-gap: 2rem;
+    row-gap: 1.5rem;
+  }
+}
+
+/* --------------------------------------------
+   MOBILE
+   -------------------------------------------- */
+
+@media (max-width: 640px) {
+  .hero--about {
+    height: auto;
+    min-height: 34rem;
+    padding-bottom: 3rem;
+  }
+
+  .hero--about .hero-content {
+    padding: 6rem 1.25rem 0;
+  }
+
+  .hero--about .hero-eyebrow {
+    margin-bottom: 1.5rem;
+  }
+
+  .hero--about .hero-title {
+    max-width: 100%;
+    font-size: clamp(2rem, 1vw, 3.5rem);
+    line-height: 1.05;
+    white-space: normal;
+    text-wrap: balance;
+  }
+
+  .hero--about .hero-sub {
+    margin-top: 1.5rem;
+    font-size: var(--about-body-size);
+    line-height: 1.7;
+  }
+
+  .ff {
+    padding: 4rem 1.25rem;
+  }
+
+  .ff__eyebrow {
+    margin-bottom: 1.25rem;
+    font-size: clamp(2rem, 8vw, 2.75rem);
+  }
+
+  .ff__note {
+    margin-bottom: 2.5rem;
+    font-size: var(--about-body-size);
+    line-height: 1.75;
+  }
+
+  .ff__list {
+    justify-content: center;
+    column-gap: 1.5rem;
+    row-gap: 1.25rem;
+  }
+
+  .ff__list li {
+    font-size: var(--about-body-size);
+  }
+}
+
+/* --------------------------------------------
+   ACCESSIBILITY
+   -------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+  .ff__list li {
+    transition: none;
+  }
+}

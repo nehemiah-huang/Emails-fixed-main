@@ -1,0 +1,362 @@
+/* =====================================================================
+   Ɛdan GLOBAL FOOTER. Prefix: ft
+   Self-contained: no body classes, no base.css tokens required.
+   ===================================================================== */
+.ft{
+  --ft-bg:#342b22;
+  --ft-ink:#efe4cf;
+  --ft-dim:#c8bba3;
+  --ft-rule:rgba(239,228,207,.32);
+  --ft-line:#3a2f23;
+  --ft-wash:#c9a76b;
+  --ft-serif:"Space Grotesk","Helvetica Neue",Arial,sans-serif;
+  --ft-hand:"Reenie Beanie","Bradley Hand",cursive;
+
+  position:relative;
+  overflow-x:clip;                      /* stops the ground overshoot causing sideways scroll */
+  /* padding-top:clamp(3.5rem,7vw,6rem);   open paper space above the skyline */
+  background:transparent;               /* page paper shows through the sky */
+}
+
+/* ---------- handwritten note (top right) ---------- */
+.ft__note{
+  position:absolute;
+  top:clamp(1rem,2.2vw,2rem);
+  right:clamp(2rem,9vw,9rem);
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  color:#5a5046;
+  pointer-events:none;
+}
+.ft__note-text{
+  font-family:var(--ft-hand);
+  font-size:clamp(1.1rem,1.9vw,1.6rem);
+  line-height:1;
+  transform:rotate(-14deg);
+  margin-left:.6rem;
+}
+.ft__note-arrow{
+  width:clamp(2.2rem,4vw,3.6rem);
+  height:auto;
+  margin-top:.15rem;
+  fill:none;
+  stroke:currentColor;
+  stroke-width:1.2;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+}
+
+/* ---------- skyline ---------- */
+.ft__sky{display:block;line-height:0}
+.ft__svg{
+  display:block;
+  width:100%;
+  aspect-ratio:1100 / 120;
+  height:auto;
+  overflow:visible;
+}
+.ft__wash{fill:var(--ft-wash);opacity:.32;stroke:none}
+.ft__line{
+  fill:none;
+  stroke:var(--ft-line);
+  stroke-width:.8;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+}
+.ft__person{fill:var(--ft-line);stroke:none}
+.ft__ground{fill:var(--ft-bg);stroke:none}
+
+/* ---------- dark body ---------- */
+.ft__body{
+  background:var(--ft-bg);
+  color:var(--ft-ink);
+  margin-top:-1px;                      /* hides any sub-pixel seam */
+  padding:clamp(2.25rem,4.5vw,4rem) 0 clamp(1.5rem,2.5vw,2.25rem);
+}
+.ft__board{
+  width:100%;
+  max-width:120rem;
+  margin-inline:auto;
+  container-type:inline-size;
+}
+.ft__inner{padding-inline:5.8cqw}
+
+.ft__cols{
+  display:grid;
+  grid-template-columns:358fr 231fr 213fr 171fr;
+  align-items:start;
+}
+
+.ft__brand{
+  margin:0 0 1.1rem;
+  font-family:var(--ft-serif);
+  font-weight:400;
+  font-size:clamp(2.25rem,3.3cqw,4rem);
+  line-height:1;
+  letter-spacing:-.01em;
+  color:var(--ft-ink);
+}
+.ft__blurb{
+  margin:0;
+  max-width:min(100%,19rem);
+  font-family:var(--ft-sans);
+  font-size:clamp(.85rem,1.08cqw,1.05rem);
+  line-height:1.5;
+  color:var(--ft-ink);
+}
+
+/* headings: tan, bold, with a short rule, so they stand apart from the links */
+.ft__label{
+  margin:0 0 1.1rem;
+  font-family:var(--ft-serif);
+  font-weight:600;
+  font-size:clamp(.78rem,.92cqw,.92rem);
+  letter-spacing:.22em;
+  text-transform:uppercase;
+  color:var(--ft-wash);
+}
+.ft__label::after{
+  content:"";
+  display:block;
+  width:2rem;
+  height:1px;
+  margin-top:.7rem;
+  background:var(--ft-wash);
+  opacity:.7;
+}
+
+.ft__list{list-style:none;margin:0;padding:0}
+.ft__link{
+  display:inline-block;
+  padding:.28em 0;
+  font-family:var(--ft-sans);
+  font-size:clamp(.9rem,1.18cqw,1.1rem);
+  line-height:1.3;
+  color:var(--ft-ink);
+  text-decoration:none;
+}
+.ft__link:hover{text-decoration:underline;text-underline-offset:.25em;text-decoration-thickness:1px}
+.ft a:focus-visible,
+.ft input:focus-visible,
+.ft button:focus-visible{
+  outline:2px solid var(--ft-ink);
+  outline-offset:3px;
+}
+
+/* ---------- contact (under the brand) ---------- */
+.ft__contact{
+  list-style:none;
+  margin:1.3rem 0 0;
+  padding:0;
+}
+.ft__contact a{
+  display:inline-block;
+  padding:.28em 0;
+  font-family:var(--ft-sans);
+  font-size:clamp(.85rem,1.05cqw,1rem);
+  line-height:1.3;
+  color:var(--ft-ink);
+  text-decoration:none;
+  overflow-wrap:anywhere;              /* long email wraps instead of overflowing */
+}
+.ft__contact a:hover{text-decoration:underline;text-underline-offset:.25em;text-decoration-thickness:1px}
+
+/* ---------- social icons: big, interactive ---------- */
+.ft__social{
+  display:flex;
+  flex-wrap:wrap;                       /* six icons wrap on very narrow phones instead of overflowing */
+  gap:.25rem;
+  margin:1rem 0 0 -.7rem;               /* -.7rem lines the first icon up with the text edge */
+  padding:0;
+  list-style:none;
+}
+.ft__social a{
+  display:grid;
+  place-items:center;
+  width:3rem;
+  height:3rem;
+  border:1px solid transparent;
+  border-radius:50%;
+  color:var(--ft-ink);
+  transition:color .2s ease, border-color .2s ease, background-color .2s ease, transform .2s ease;
+}
+.ft__social svg{
+  width:1.6rem;
+  height:1.6rem;
+  fill:none;
+  stroke:currentColor;
+  stroke-width:1.4;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+}
+.ft__social .ft__fill{fill:currentColor;stroke:none}   /* the X logo is a filled shape */
+.ft__social a:hover,
+.ft__social a:focus-visible{
+  color:var(--ft-wash);
+  border-color:var(--ft-wash);
+  background-color:rgba(201,167,107,.12);
+  transform:translateY(-3px);
+}
+.ft__social a:active{transform:translateY(-1px)}
+
+/* ---------- stay connected ---------- */
+.ft__form{
+  display:flex;
+  align-items:center;
+  border-bottom:1px solid var(--ft-rule);
+}
+.ft__input{
+  flex:1;
+  min-width:0;
+  padding:.75rem 0;
+  background:transparent;
+  border:0;
+  border-radius:0;
+  font-family:var(--ft-sans);
+  font-size:clamp(.85rem,1.05cqw,1rem);
+  color:var(--ft-ink);
+}
+.ft__input::placeholder{color:var(--ft-dim);opacity:1}
+.ft__send{
+  display:grid;
+  place-items:center;
+  width:2.5rem;
+  height:2.5rem;
+  padding:0;
+  background:transparent;
+  border:0;
+  color:var(--ft-ink);
+  cursor:pointer;
+}
+.ft__send svg{width:1.1rem;height:1.1rem}
+
+/* ---------- map ---------- */
+.ft__form + .ft__map{margin-top:1.6rem}
+.ft__map{
+  margin-top:1.1rem;
+  border:1px solid var(--ft-rule);
+}
+.ft__map iframe{
+  display:block;
+  width:100%;
+  height:clamp(6.5rem,9cqw,9rem);
+  border:0;
+  /* mutes Google's bright colours so the map sits with the brown palette */
+  filter:grayscale(.7) sepia(.35) brightness(.95);
+}
+.ft__maplink{
+  display:inline-block;
+  margin-top:.5rem;
+  padding:.2rem 0;
+  font-family:var(--ft-sans);
+  font-size:clamp(.72rem,.82cqw,.82rem);
+  color:var(--ft-dim);
+  text-decoration:none;
+}
+.ft__maplink:hover{color:var(--ft-ink);text-decoration:underline;text-underline-offset:.25em}
+
+/* ---------- bottom row ---------- */
+.ft__bottom{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:space-between;
+  gap:.75rem 2rem;
+  margin-top:clamp(2rem,4vw,3.5rem);
+  padding-top:1rem;
+  border-top:1px solid var(--ft-rule);
+  font-family:var(--ft-sans);
+  font-size:clamp(.72rem,.82cqw,.82rem);
+  color:var(--ft-dim);
+}
+.ft__bottom p{margin:0}
+.ft__legal{display:flex;gap:2rem;margin:0;padding:0;list-style:none}
+.ft__legal a{color:var(--ft-dim);text-decoration:none;padding:.2rem 0}
+.ft__legal a:hover{color:var(--ft-ink);text-decoration:underline;text-underline-offset:.25em}
+
+.ft__sr{
+  position:absolute;
+  width:1px;height:1px;
+  overflow:hidden;
+  clip:rect(0 0 0 0);
+  white-space:nowrap;
+}
+
+/* people who turn animations off get the colour change but no movement */
+@media (prefers-reduced-motion:reduce){
+  .ft__social a{transition:none}
+  .ft__social a:hover,
+  .ft__social a:focus-visible,
+  .ft__social a:active{transform:none}
+}
+
+/* ---------- tablet (up to 1060px, matches the nav breakpoint) ---------- */
+@media (max-width:1060px){
+  .ft__board{container-type:normal}
+  .ft__inner{padding-inline:clamp(1.5rem,5vw,3rem)}
+
+  .ft__cols{
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    gap:2.5rem 2rem;
+  }
+  .ft__col--brand{grid-column:1 / -1}
+
+  .ft__brand{font-size:2.75rem}
+  .ft__blurb{font-size:1rem;max-width:26rem}
+  .ft__label{font-size:.82rem}
+  .ft__link{font-size:1rem;padding:.45rem 0}
+  .ft__input{font-size:1rem}
+  .ft__contact a{font-size:1rem}
+  .ft__map iframe{height:9rem}
+  .ft__bottom{font-size:.8rem}
+}
+
+/* ---------- phone (up to 640px): one section per row, centred ---------- */
+@media (max-width:640px){
+  .ft{padding-top:3.25rem}
+  .ft__note{right:1.25rem;top:.5rem}
+
+  /* fixed height + slice crops the LEFT side and keeps the tower end.
+     overflow:hidden stops the cropped part spilling out */
+  .ft__svg{
+    aspect-ratio:auto;
+    height:clamp(6.5rem,30vw,9rem);
+    overflow:hidden;
+  }
+
+  .ft__inner{padding-inline:1.5rem}
+  .ft__cols{
+    grid-template-columns:minmax(0,1fr);
+    gap:2.5rem;
+    text-align:center;
+  }
+
+  .ft__brand{font-size:2.5rem}
+  .ft__blurb{margin-inline:auto}
+
+  /* small rule under every heading, centred */
+  .ft__label::after{margin-inline:auto}
+
+  /* email field keeps its full width, text centred */
+  .ft__input{text-align:center}
+
+  /* social icons: centred, negative desktop offset removed */
+  .ft__social{justify-content:center;margin-left:0}
+
+  /* taller map on phones so it's usable */
+  .ft__map iframe{height:12rem}
+
+  /* bottom row */
+  .ft__bottom{
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
+  }
+  .ft__legal{justify-content:center}
+}
+
+
+/* footer is always the shared paper colour, on every page, margins included */
+.ft-wrap{ display:flow-root; background-color:var(--paper,#F2EAD9); }
+.ft,
+.ft__sky{ background-color:var(--paper,#F2EAD9); }

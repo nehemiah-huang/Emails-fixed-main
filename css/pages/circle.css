@@ -1,0 +1,172 @@
+/* ============================================
+   WE ARE CIRCULAR  (.ci)   static, no animation yet
+   Reference is 1249 wide: on the stage 1cqw = 1% of the board width.
+   The left group (.ci__art) is its own container, 610 reference units wide.
+   Headline colour: brown-black to match the rest of the site.
+   The reference shows dark green; to use it change --ci-head to #1f3a2c.
+   ============================================ */
+.ci{
+  --ci-ink:#1f1913; --ci-head:#1f1913; --ci-body:#2a221a; --ci-rule:rgba(92,70,48,.4);
+  position:relative; overflow:hidden; color:var(--ci-ink);
+  padding:clamp(1.5rem,3vw,3rem) 0;
+  --ci-sans:"Inter","Space Grotesk",system-ui,sans-serif; /* swap to "Space Grotesk" if you prefer the site sans */
+  font-family:var(--ci-sans);
+}
+.ci__defs{ position:absolute; width:0; height:0; }
+.ci__board{ container-type:inline-size; width:min(100%,120rem); margin-inline:auto; }
+.ci__stage{ position:relative; aspect-ratio:1249/566; }
+.ci__stage::before,.ci__stage::after{ content:""; position:absolute; left:3.2cqw; width:92.1cqw; border-top:1px solid var(--ci-rule); }
+.ci__stage::before{ top:.64cqw; }
+.ci__stage::after{ top:44.84cqw; }
+
+/* ---- left group (610 x 566 reference units) ---- */
+.ci__art{ position:absolute; left:0; top:0; width:48.84cqw; aspect-ratio:610/566; container-type:inline-size; }
+.ci__svg{ position:absolute; inset:0; width:100%; height:100%; overflow:visible; }
+.ci__photo{ position:absolute; left:28.36cqw; top:15.08cqw; width:54.1cqw; aspect-ratio:1; border-radius:50%; overflow:hidden; background:#cdb694; }
+.ci__photo img{ width:100%; height:100%; object-fit:cover; display:block; }
+.ci__lbl{ position:absolute; margin:0; font-family:"Reenie Beanie","Bradley Hand",cursive; font-size:3.7cqw; line-height:1; color:#37322a; white-space:nowrap; -webkit-text-stroke:.3px #37322a; transform:translate(-50%,-50%) rotate(var(--r)); }
+.ci__lbl--stay{ left:64.3cqw; top:6.6cqw; --r:-4deg; }
+.ci__lbl--make{ left:90.7cqw; top:19.8cqw; --r:-21deg; }
+.ci__lbl--return{ left:16.9cqw; top:57.2cqw; --r:-3deg; }
+.ci__lbl--gather{ left:63.1cqw; top:74.3cqw; --r:-9deg; }
+.ci__polaroid{ position:absolute; margin:0; left:81.6cqw; top:67.1cqw; width:22.2cqw; aspect-ratio:1/1.015; transform:translate(-50%,-50%) rotate(-8.3deg); background:#f2e8cf; box-shadow:0 .25cqw .8cqw rgba(60,40,20,.28), inset 0 0 .5cqw rgba(120,90,50,.18); border-radius:.15cqw; }
+.ci__polaroid img{ position:absolute; left:5.4%; top:5.2%; width:88%; height:81%; object-fit:cover; display:block; }
+
+/* ---- right copy ---- */
+.ci__copy{ position:absolute; left:53.16cqw; top:6.24cqw; width:44cqw; }
+.ci__title{ margin:0; font-family:var(--nav-serif,"Newsreader",Georgia,serif); font-weight:500; color:var(--ci-head); font-optical-sizing:none; font-variation-settings:"opsz" 53; }
+.ci__title span{ display:block; white-space:nowrap; letter-spacing:-.07em; word-spacing:.06em; }
+.ci__t1{ font-size:2.62cqw; line-height:1; }
+.ci__t2{ font-size:9.8cqw; line-height:.82; margin-top:.5cqw; letter-spacing:0; }
+.ci__t3{ margin-top:-1cqw; font-size:2.8cqw; line-height:1; font-style:italic; font-weight:400; letter-spacing:.02em; }
+.ci__rule{ display:block; width:3.6cqw; border-top:1px solid var(--ci-ink); margin:1.3cqw 0 1.46cqw .32cqw; }
+.ci__title + .ci__rule{ margin:1.65cqw 0 1.2cqw .32cqw; }
+.ci__manifesto p{ margin:0 0 0 .32cqw; font-size:1.32cqw; line-height:2.36cqw; color:var(--ci-body); }
+.ci__tagline{ margin:0 0 0 .32cqw; font-family:var(--nav-serif,"Newsreader",Georgia,serif); font-style:italic; font-size:1.47cqw; line-height:1.4; color:var(--ci-body); }
+
+/* ---- bottom-right sketch (x 880-1249, y 330-566 of the reference) ---- */
+.ci__sketch{ position:absolute; left:70.46cqw; top:26.42cqw; width:29.54cqw; height:auto; overflow:visible; }
+.ci svg path{ fill:none; stroke-linecap:round; stroke-linejoin:round; }
+.ci .ink{ stroke:#37322a; stroke-width:.9; } .ci .ink2{ stroke:#51493e; stroke-width:.65; }
+.ci .fine{ stroke:#4a443a; stroke-width:.4; opacity:.85; } .ci .hatch{ stroke:#4a443a; stroke-width:.3; opacity:.7; }
+.ci .guide{ stroke:#8a7a68; stroke-width:.4; opacity:.8; }
+.ci .dash{ stroke:#4b443a; stroke-width:.9; stroke-dasharray:4 4.5; opacity:.85; }
+.ci .dot{ fill:#37322a; }
+.ci .solid{ fill:var(--paper,#F2EAD9); stroke:none; }
+.ci .scrap{ stroke:none; }
+.ci .scrap.a{ fill:#c6944a; } .ci .scrap.b{ fill:#c9994f; } .ci .scrap.c{ fill:#dcb988; }
+
+/* ---- tablet / phone: one column (no mobile reference was given: this is a sensible stack) ---- */
+
+/* ---- tablet / phone ---- */
+@media (max-width: 860px) {
+  .ci__board {
+    container-type: normal;
+    max-width: 36rem;
+    width: 100%;
+    padding-inline: 1.2rem;
+    box-sizing: border-box;
+  }
+
+  .ci__stage {
+    aspect-ratio: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    padding: 1.6rem 0 2rem;
+  }
+
+  .ci__stage::before,
+  .ci__stage::after {
+    left: 0;
+    width: 100%;
+  }
+
+  .ci__stage::before {
+    top: 0;
+  }
+
+  .ci__stage::after {
+    top: auto;
+    bottom: 0;
+  }
+
+  /* Let the title and text become individual flex items */
+  .ci__copy {
+    display: contents;
+  }
+
+  .ci__title {
+    order: 1;
+    width: 100%;
+  }
+
+  .ci__t1 {
+    font-size: clamp(1.9rem, 8.5vw, 2.8rem);
+  }
+
+  .ci__t2 {
+    font-size: clamp(4.6rem, 24vw, 7.6rem);
+    margin-top: .3rem;
+  }
+
+  .ci__t3 {
+    font-size: clamp(1.9rem, 8.5vw, 2.8rem);
+    margin-top: -.5rem;
+  }
+
+  /* Image designs directly after the title */
+  .ci__art {
+    position: relative;
+    left: auto;
+    top: auto;
+    order: 2;
+    width: 100%;
+    max-width: 30rem;
+    height: auto;
+    aspect-ratio: 610 / 566;
+    margin: 1.8rem auto 0;
+    flex-shrink: 0;
+    box-sizing: border-box;
+  }
+
+  /* Restore the artwork's original proportions */
+  .ci__rule,
+  .ci__title + .ci__rule {
+    order: 3;
+    width: 2.6rem;
+    margin: 1.7rem 0 1.1rem;
+  }
+
+  .ci__manifesto {
+    order: 4;
+  }
+
+  .ci__manifesto p {
+    font-size: 1.05rem;
+    line-height: 1.9;
+  }
+
+  .ci__tagline {
+    order: 5;
+    font-size: 1.1rem;
+    text-wrap: balance;
+  }
+
+  /* Center the building sketch instead of pushing it sideways */
+  .ci__sketch {
+    position: relative;
+    left: auto;
+    top: auto;
+    order: 6;
+    display: block;
+    width: min(100%, 24rem);
+    height: auto;
+    margin: 1rem auto 0;
+  }
+    /* Shift the complete artwork left on mobile */
+  .ci__art {
+    transform: translateX(-8%);
+  }
+  
+}

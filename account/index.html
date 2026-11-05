@@ -1,0 +1,273 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#322D26">
+
+  <title>Your Ɛdan Account</title>
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="icon" href="/images/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+  <meta
+    name="description"
+    content="Sign in or create your Ɛdan account."
+  >
+
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/tokens.css">
+  <link rel="stylesheet" href="/css/footer.css">
+  <link rel="stylesheet" href="/css/pages/account.css">
+</head>
+
+<body class="page-account">
+
+  <main class="account">
+
+    <!-- Image / introduction panel -->
+    <section class="account__visual">
+      <a href="/" class="account__brand" aria-label="Ɛdan home">
+        Ɛdan
+      </a>
+
+      <div class="account__visual-image">
+        <img
+          src="/images/house-two-storey.jpg"
+          alt="A view of the Ɛdan house"
+        >
+      </div>
+
+      <div class="account__visual-copy">
+        <span class="account__eyebrow">A PLACE TO BELONG</span>
+
+        <h1>
+          Come a little<br>
+          <em>closer.</em>
+        </h1>
+
+        <p>
+          A home for gathering, discovering, and being part of
+          something still becoming.
+        </p>
+      </div>
+
+      <a href="/" class="account__back">
+        Back to Ɛdan
+      </a>
+    </section>
+
+    <!-- Account forms -->
+    <section class="account__panel">
+
+      <div class="account__panel-top">
+        <a href="/" class="account__mobile-brand">
+          Ɛdan
+        </a>
+
+        <span class="account__eyebrow">
+          YOUR SPACE AT ƐDAN
+        </span>
+      </div>
+
+      <div class="account__form-wrap">
+
+        <div class="account__heading">
+          <h2 id="accountHeading">Welcome back.</h2>
+
+          <p id="accountDescription">
+            Sign in to return to your space.
+          </p>
+        </div>
+
+        <!-- Login / signup tabs -->
+        <div class="account__tabs" role="tablist" aria-label="Account access">
+          <button
+            type="button"
+            id="loginTab"
+            class="account__tab is-active"
+            role="tab"
+            aria-selected="true"
+            aria-controls="loginForm"
+          >
+            Sign in
+          </button>
+
+          <button
+            type="button"
+            id="signupTab"
+            class="account__tab"
+            role="tab"
+            aria-selected="false"
+            aria-controls="signupForm"
+          >
+            Create account
+          </button>
+        </div>
+
+        <!-- Login form -->
+        <form id="loginForm" class="account__form">
+
+          <div class="account__field">
+            <label for="loginEmail">Email address</label>
+
+            <input
+              type="email"
+              id="loginEmail"
+              name="email"
+              placeholder="you@example.com"
+              autocomplete="email"
+              required
+            >
+          </div>
+
+          <div class="account__field">
+            <label for="loginPassword">Password</label>
+
+            <input
+              type="password"
+              id="loginPassword"
+              name="password"
+              placeholder="Enter your password"
+              autocomplete="current-password"
+              required
+            >
+          </div>
+
+          <button
+            type="button"
+            id="forgotPassword"
+            class="account__forgot"
+          >
+            Forgot your password?
+          </button>
+
+          <button type="submit" class="account__submit">
+            Sign in 
+          </button>
+
+          <p class="account__switch">
+            New to Ɛdan?
+            <button type="button" id="switchToSignup">
+              Create an account
+            </button>
+          </p>
+
+        </form>
+
+        <!-- Signup form -->
+        <form id="signupForm" class="account__form" hidden>
+
+          <div class="account__field">
+            <label for="signupName">Full name</label>
+
+            <input
+              type="text"
+              id="signupName"
+              name="full_name"
+              placeholder="Your full name"
+              autocomplete="name"
+              required
+            >
+          </div>
+
+          <div class="account__field">
+            <label for="signupEmail">Email address</label>
+
+            <input
+              type="email"
+              id="signupEmail"
+              name="email"
+              placeholder="you@example.com"
+              autocomplete="email"
+              required
+            >
+          </div>
+
+          <div class="account__field">
+            <label for="signupPassword">Create a password</label>
+
+            <input
+              type="password"
+              id="signupPassword"
+              name="password"
+              placeholder="At least 6 characters"
+              autocomplete="new-password"
+              minlength="6"
+              required
+            >
+          </div>
+
+          <button type="submit" class="account__submit">
+            Create account 
+          </button>
+
+          <p class="account__switch">
+            Already have an account?
+            <button type="button" id="switchToLogin">
+              Sign in
+            </button>
+          </p>
+
+        </form>
+
+        <!-- New password form (shown from a reset link) -->
+        <form id="recoveryForm" class="account__form" hidden>
+          <div class="account__field">
+            <label for="recoveryPassword">New password</label>
+
+            <input
+              type="password"
+              id="recoveryPassword"
+              name="password"
+              placeholder="At least 8 characters"
+              autocomplete="new-password"
+              minlength="8"
+              required
+            >
+          </div>
+
+          <div class="account__field">
+            <label for="recoveryConfirm">Confirm new password</label>
+
+            <input
+              type="password"
+              id="recoveryConfirm"
+              name="confirmPassword"
+              placeholder="Enter your new password again"
+              autocomplete="new-password"
+              minlength="8"
+              required
+            >
+          </div>
+
+          <button type="submit" class="account__submit">
+            Save new password 
+          </button>
+        </form>
+
+        <!-- Login/signup/reset feedback -->
+        <p
+          id="accountMessage"
+          class="account__message"
+          role="status"
+          aria-live="polite"
+        ></p>
+
+      </div>
+
+      <footer class="account__footer">
+        <span>Ɛdan — A home for possibility.</span>
+        <a href="/">Explore Ɛdan ↗</a>
+      </footer>
+
+    </section>
+
+  </main>
+
+  <!-- Supabase -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="/js/account.js"></script>
+
+</body>
+</html>

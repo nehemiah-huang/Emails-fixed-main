@@ -1,0 +1,439 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — Ɛdan</title>
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="icon" href="/images/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+  <meta name="description" content="Get in touch with Ɛdan, a creative urban lab in Nyaniba Estates, Accra.">
+
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/tokens.css">
+  <link rel="stylesheet" href="/css/pages/contact.css">
+  <link rel="stylesheet" href="/css/footer.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,300..600&display=swap" rel="stylesheet">
+</head>
+
+<body class="page-contact">
+
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-nav" id="siteNav">
+    <a href="/" class="nav-logo">
+      <span>Ɛdan</span>
+    </a>
+
+    <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav class="nav-links" id="navLinks" aria-label="Main">
+      <a href="/">Home</a>
+      <a href="/labs/">Labs</a>
+      <a href="/gather/">Gather</a>
+      <a href="/stay/">Stay</a>
+      <a href="/eat/">Eat</a>
+      <a href="/grow/">Grow</a>
+      <a href="/about/">Who we are</a>
+      <a href="/contact/">Contact</a>
+    </nav>
+
+    <p class="nav-note" aria-hidden="true">A space for<br>people &amp; ideas</p>
+  </header>
+
+  <main id="main">
+
+    <!-- HERO -->
+    <section class="contact-hero" aria-labelledby="contact-title">
+      <div class="contact-hero__image">
+        <img
+          src="/images/breeze-block-terracotta.jpg"
+          alt="A welcoming corner of Ɛdan's creative space"
+          fetchpriority="high"
+        >
+
+        <div class="contact-hero__veil"></div>
+
+        <div class="contact-hero__content">
+          <p class="contact-eyebrow">CONTACT ƐDAN</p>
+          <h1 id="contact-title">Let's talk.</h1>
+          <p>
+            Have a question, an idea, or want to work with us?
+            We'd love to hear from you.
+          </p>
+          <a class="contact-button contact-button--light" href="#contact-details">
+            Get in touch <span aria-hidden="true">↘</span>
+          </a>
+        </div>
+
+        <div class="contact-hero__caption">
+          <span>A SPACE FOR PEOPLE &amp; IDEAS</span>
+          <span>NYANIBA ESTATES · ACCRA</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT DETAILS -->
+    <section class="contact-main" id="contact-details" aria-labelledby="contact-main-title">
+      <div class="contact-container">
+
+        <header class="contact-main__heading">
+          <p class="contact-eyebrow">WE'RE HERE TO HELP</p>
+          <h2 id="contact-main-title">Get in touch</h2>
+          <p>
+            Whether you're exploring a collaboration, planning a visit,
+            or simply have a question, here's where to start.
+          </p>
+        </header>
+
+        <div class="contact-details">
+
+          <article class="contact-detail">
+            <span class="contact-detail__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <rect x="3" y="5" width="18" height="14" rx="2"></rect>
+                <path d="m4 7 8 6 8-6"></path>
+              </svg>
+            </span>
+
+            <h3>General enquiries</h3>
+            <p>
+              For questions, partnerships, press, research,
+              and collaboration opportunities.
+            </p>
+
+            <a class="contact-text-link" href="mailto:hello@yourdomain.com">
+              hello@yourdomain.com <span aria-hidden="true">↗</span>
+            </a>
+          </article>
+
+          <article class="contact-detail">
+            <span class="contact-detail__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z"></path>
+                <circle cx="12" cy="10" r="2.5"></circle>
+              </svg>
+            </span>
+
+            <h3>Visit Ɛdan</h3>
+            <p>
+              Find us in Nyaniba Estates, Accra.
+              Please get in touch before visiting so we can help arrange your time with us.
+            </p>
+
+            <p class="contact-address">
+              Nyaniba Estates<br>
+              Accra, Ghana
+            </p>
+          </article>
+
+        </div>
+
+        
+        <!-- EVENT ENQUIRY -->
+        <section class="event-enquiry" id="event-enquiry" aria-labelledby="event-enquiry-title">
+          <div class="event-enquiry__inner">
+
+            <header class="event-enquiry__intro">
+              <p class="event-enquiry__eyebrow">ƐDAN / GATHERINGS</p>
+              <h2 id="event-enquiry-title">Bring an idea<br><em>into the space.</em></h2>
+              <p>
+                A gathering, a conversation, a listening session.
+                Tell us what you're imagining, and we'll explore whether
+                Ɛdan is the right place for it.
+              </p>
+              <span class="event-enquiry__note">EVENT ENQUIRY · ACCRA, GHANA</span>
+            </header>
+
+            <form
+              class="event-form"
+              id="eventEnquiryForm"
+              action="https://formsubmit.co/nhuang934@gmail.com"
+              method="POST"
+            >
+              <input type="hidden" name="_subject" value="New Event Enquiry | Ɛdan">
+              <!-- <input type="hidden" name="_cc" value="YOUR_SECOND_EMAIL,YOUR_CC_EMAIL"> -->
+              <input type="hidden" name="_template" value="basic">
+              <input type="hidden" name="_captcha" value="true">
+
+              <div class="event-form__heading">
+                <span>01</span>
+                <h3>About you</h3>
+              </div>
+
+              <div class="event-form__grid">
+                <div class="event-field">
+                  <label for="event-name">Full name <span>*</span></label>
+                  <input id="event-name" name="Full name" type="text"
+                    autocomplete="name" placeholder="Your name" required>
+                </div>
+
+                <div class="event-field">
+                  <label for="event-email">Email address <span>*</span></label>
+                  <input id="event-email" name="Email" type="email"
+                    autocomplete="email" placeholder="you@example.com" required>
+                </div>
+
+                <div class="event-field">
+                  <label for="event-phone">Phone or WhatsApp</label>
+                  <input id="event-phone" name="Phone or WhatsApp" type="tel"
+                    autocomplete="tel" placeholder="Your contact number">
+                </div>
+
+                <fieldset class="event-field event-field--full">
+                  <legend>Are you part of Ɛdan? <span>*</span></legend>
+                  <div class="event-choice">
+                    <label class="event-choice__option">
+                      <input type="radio" name="Enquirer type" value="Member" required>
+                      <span>Member</span>
+                    </label>
+                    <label class="event-choice__option">
+                      <input type="radio" name="Enquirer type" value="External">
+                      <span>External</span>
+                    </label>
+                  </div>
+                </fieldset>
+
+                <div class="event-field event-member-fields" hidden>
+                  <label for="event-membership">Membership name or number</label>
+                  <input id="event-membership" name="Membership details" type="text"
+                    placeholder="Membership details">
+                </div>
+
+                <div class="event-field event-external-fields" hidden>
+                  <label for="event-organisation">Organisation or collective</label>
+                  <input id="event-organisation" name="Organisation or collective" type="text"
+                    placeholder="Organisation name">
+                </div>
+              </div>
+
+              <div class="event-form__heading">
+                <span>02</span>
+                <h3>Your event</h3>
+              </div>
+
+              <div class="event-form__grid">
+                <div class="event-field event-field--full">
+                  <label for="event-type">What kind of gathering are you planning? <span>*</span></label>
+                  <select id="event-type" name="Event type" required>
+                    <option value="">Choose an event type</option>
+                    <option>Showcase or exhibition</option>
+                    <option>Meeting or gathering</option>
+                    <option>Listening session</option>
+                    <option>Public talk or conversation</option>
+                    <option>Launch</option>
+                    <option>Workshop</option>
+                    <option>Other</option>
+                  </select>
+                </div>
+
+                <div class="event-field event-field--full">
+                  <label for="event-title">Working title</label>
+                  <input id="event-title" name="Working title" type="text"
+                    placeholder="A name for your event, if you have one">
+                </div>
+
+                <div class="event-field event-field--full">
+                  <label for="event-description">Tell us about your idea <span>*</span></label>
+                  <textarea id="event-description" name="Event description" rows="5"
+                    placeholder="What would happen at your event? Who is it for?" required></textarea>
+                </div>
+
+                <fieldset class="event-field event-field--full">
+                  <legend>How will people attend? <span>*</span></legend>
+                  <div class="event-choice event-choice--wrap">
+                    <label class="event-choice__option">
+                      <input type="radio" name="Attendance format" value="Public" required>
+                      <span>Public</span>
+                    </label>
+                    <label class="event-choice__option">
+                      <input type="radio" name="Attendance format" value="Invitation-only">
+                      <span>Invitation-only</span>
+                    </label>
+                    <label class="event-choice__option">
+                      <input type="radio" name="Attendance format" value="Ticketed">
+                      <span>Ticketed</span>
+                    </label>
+                  </div>
+                </fieldset>
+              </div>
+
+              <div class="event-form__heading">
+                <span>03</span>
+                <h3>Dates and details</h3>
+              </div>
+
+              <div class="event-form__grid">
+                <div class="event-field">
+                  <label for="event-date">Preferred date <span>*</span></label>
+                  <input id="event-date" name="Preferred date" type="date" required>
+                </div>
+
+                <div class="event-field">
+                  <label for="event-alt-date">Alternative date</label>
+                  <input id="event-alt-date" name="Alternative date" type="date">
+                </div>
+
+                <div class="event-field">
+                  <label for="event-start">Start time <span>*</span></label>
+                  <input id="event-start" name="Start time" type="time" required>
+                </div>
+
+                <div class="event-field">
+                  <label for="event-end">Finish time <span>*</span></label>
+                  <input id="event-end" name="Finish time" type="time" required>
+                </div>
+
+                <div class="event-field">
+                  <label for="event-guests">Expected guests <span>*</span></label>
+                  <input id="event-guests" name="Expected guests" type="number"
+                    min="1" step="1" placeholder="Number of people" required>
+                </div>
+
+                <div class="event-field">
+                  <label for="event-setup">Setup time, if needed</label>
+                  <input id="event-setup" name="Setup time" type="text"
+                    placeholder="e.g. 1 hour before">
+                </div>
+
+                <fieldset class="event-field event-field--full">
+                  <legend>What will you need?</legend>
+                  <div class="event-needs">
+                    <label><input type="checkbox" name="Requirements" value="Sound system or microphones"> Sound system or microphones</label>
+                    <label><input type="checkbox" name="Requirements" value="Projector and screen"> Projector and screen</label>
+                    <label><input type="checkbox" name="Requirements" value="Seating"> Seating</label>
+                    <label><input type="checkbox" name="Requirements" value="Café or catering"> Café or catering</label>
+                    <label><input type="checkbox" name="Requirements" value="Photography or filming"> Photography or filming</label>
+                  </div>
+                </fieldset>
+
+                <div class="event-field event-field--full">
+                  <label for="event-extra">Anything else we should know?</label>
+                  <textarea id="event-extra" name="Additional requirements" rows="3"
+                    placeholder="Accessibility, setup, or other details"></textarea>
+                </div>
+              </div>
+
+              <div class="event-form__submit">
+                <p>
+                  Submitting an enquiry doesn't confirm your date or book the space.
+                  Our team will review your proposal and get in touch.
+                </p>
+                <button type="submit" class="event-submit" id="eventSubmit">
+                  <span>Send event enquiry</span>
+                  <span aria-hidden="true">+</span>
+                </button>
+                <p class="event-form__status" id="eventFormStatus" role="status" aria-live="polite"></p>
+              </div>
+
+              <div class="event-form__honeypot" aria-hidden="true">
+                <label for="event-website">Leave this field empty</label>
+                <input id="event-website" type="text" name="_honey" tabindex="-1" autocomplete="off">
+              </div>
+            </form>
+          </div>
+        </section>
+<!-- END EVENT ENQUIRY -->
+
+        <!-- SOCIAL LINKS -->
+        <section class="contact-social" aria-labelledby="contact-social-title">
+          <p class="contact-eyebrow">STAY CONNECTED</p>
+          <h2 id="contact-social-title">Follow along</h2>
+          <p class="contact-social__intro">
+            Follow our projects, gatherings, and stories as they unfold.
+          </p>
+
+          <div class="contact-social__links">
+
+            <a class="contact-social__link"
+               href="https://www.instagram.com/YOUR_USERNAME/"
+               target="_blank"
+               rel="noopener noreferrer"
+               aria-label="Ɛdan on Instagram"
+               title="Instagram">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <rect x="3" y="3" width="18" height="18" rx="5"></rect>
+                <circle cx="12" cy="12" r="4"></circle>
+                <circle class="icon-fill" cx="17.5" cy="6.5" r="1"></circle>
+              </svg>
+            </a>
+
+            <a class="contact-social__link"
+               href="https://www.linkedin.com/company/YOUR_COMPANY/"
+               target="_blank"
+               rel="noopener noreferrer"
+               aria-label="Ɛdan on LinkedIn"
+               title="LinkedIn">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M5 9v10"></path>
+                <path d="M5 5.5v.1"></path>
+                <path d="M10 19v-6a4 4 0 0 1 8 0v6"></path>
+                <path d="M10 9v10"></path>
+              </svg>
+            </a>
+
+            <a class="contact-social__link"
+               href="https://www.youtube.com/@YOUR_CHANNEL"
+               target="_blank"
+               rel="noopener noreferrer"
+               aria-label="Ɛdan on YouTube"
+               title="YouTube">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M21 7.5a2.8 2.8 0 0 0-2-2C17.3 5 12 5 12 5s-5.3 0-7 .5a2.8 2.8 0 0 0-2 2A29 29 0 0 0 2.7 12 29 29 0 0 0 3 16.5a2.8 2.8 0 0 0 2 2c1.7.5 7 .5 7 .5s5.3 0 7-.5a2.8 2.8 0 0 0 2-2 29 29 0 0 0 .3-4.5 29 29 0 0 0-.3-4.5Z"></path>
+                <path class="icon-fill" d="m10 9 5 3-5 3Z"></path>
+              </svg>
+            </a>
+
+            <a class="contact-social__link"
+               href="https://wa.me/233XXXXXXXXX"
+               target="_blank"
+               rel="noopener noreferrer"
+               aria-label="Chat with Ɛdan on WhatsApp"
+               title="WhatsApp">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M20.5 11.7a8.5 8.5 0 0 1-12.6 7.5L3 20.5l1.4-4.7A8.5 8.5 0 1 1 20.5 11.7Z"></path>
+                <path d="M8.2 7.8c.2-.4.5-.4.8-.4h.5c.2 0 .4.1.5.4l.8 1.8c.1.2.1.4-.1.6l-.6.7c-.2.2-.2.4 0 .7a7 7 0 0 0 2.8 2.5c.3.1.5.1.6-.1l.9-1.1c.2-.2.4-.3.7-.2l1.7.8c.3.1.4.3.4.5 0 .4-.2 1.2-.7 1.6-.5.5-1.2.7-2 .6-1.1-.2-2.4-.8-3.8-2-1.5-1.3-2.5-2.8-2.8-3.9-.3-1.1.1-1.9.5-2.5Z"></path>
+              </svg>
+            </a>
+
+            <a class="contact-social__link"
+               href="mailto:hello@yourdomain.com"
+               aria-label="Email Ɛdan"
+               title="Email">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <rect x="3" y="5" width="18" height="14" rx="2"></rect>
+                <path d="m4 7 8 6 8-6"></path>
+              </svg>
+            </a>
+
+          </div>
+        </section>
+
+      </div>
+    </section>
+
+    <!-- CLOSING NOTE -->
+    <section class="contact-note">
+      <div class="contact-note__inner">
+        <span class="contact-note__mark" aria-hidden="true">Ɛ</span>
+        <p>No finished plan needed. <em>Just say hello.</em></p>
+      </div>
+    </section>
+
+  </main>
+
+  <div data-include="/partials/nav-footer.html"></div>
+
+  <script src="/js/include.js"></script>
+  <script src="/js/main.js"></script>
+  <script src="/js/nav.js"></script>
+  <script src="/js/contact.js" defer></script>
+
+</body>
+</html>

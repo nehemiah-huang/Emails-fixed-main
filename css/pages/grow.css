@@ -1,0 +1,1104 @@
+
+/* =========================================================
+   Ɛdan — GROW
+   Botanical field journal / garden / living laboratory
+   ========================================================= */
+
+.page-grow {
+  --grow-green: #354b38;
+  --grow-green-deep: #26382b;
+  --grow-green-soft: #687a5b;
+  --grow-leaf: #a6ad88;
+  --grow-cream: #f2ead9;
+  --grow-paper: #faf5e9;
+  --grow-ink: #302e29;
+  --grow-pencil: #82796a;
+  --grow-line: rgba(48, 46, 41, 0.22);
+
+  background: var(--grow-cream);
+  color: var(--grow-ink);
+  overflow-x: clip;
+}
+
+.page-grow main {
+  overflow: clip;
+}
+
+.page-grow img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.page-grow figure {
+  margin: 0;
+}
+
+.page-grow a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.page-grow h1,
+.page-grow h2,
+.page-grow h3,
+.page-grow p {
+  margin-top: 0;
+}
+
+.page-grow h1,
+.page-grow h2,
+.page-grow h3 {
+  font-weight: 400;
+}
+
+.page-grow h1 em,
+.page-grow h2 em {
+  font-weight: 400;
+  font-style: italic;
+}
+
+.grow-section {
+  position: relative;
+  padding: clamp(5rem, 10vw, 10rem) clamp(1.25rem, 7vw, 7.5rem);
+}
+
+.grow-eyebrow {
+  margin-bottom: 1.5rem;
+  color: rgba(250, 245, 233, 0.78);
+  font-size: 0.67rem;
+  font-weight: 500;
+  letter-spacing: 0.19em;
+  line-height: 1.6;
+  text-transform: uppercase;
+}
+
+.grow-eyebrow--dark {
+  color: var(--grow-green-soft);
+}
+
+.grow-body-copy {
+  color: var(--grow-pencil);
+  font-size: 0.96rem;
+  line-height: 1.95;
+}
+
+.grow-image-frame {
+  position: relative;
+  overflow: hidden;
+  background: #ded7c5;
+}
+
+.grow-image-frame img {
+  transition: transform 700ms cubic-bezier(0.2, 0.65, 0.3, 1);
+}
+
+.grow-image-frame:hover img {
+  transform: scale(1.035);
+}
+
+.grow-text-link,
+.grow-dark-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 1.5rem;
+  width: fit-content;
+  padding-bottom: 0.65rem;
+  border-bottom: 1px solid currentColor;
+  font-size: 0.76rem;
+  letter-spacing: 0.035em;
+  transition: gap 250ms ease;
+}
+
+.grow-text-link:hover,
+.grow-dark-link:hover {
+  gap: 2rem;
+}
+
+.grow-text-link span,
+.grow-dark-link span {
+  font-size: 1.1rem;
+}
+
+
+/* =========================================================
+   01 — HERO
+   ========================================================= */
+
+.grow-hero {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  min-height: min(850px, 100svh);
+  min-height: min(850px, 100vh);
+  padding: clamp(8rem, 15vh, 12rem) clamp(1.5rem, 8vw, 8rem) 7rem;
+  overflow: hidden;
+  color: var(--grow-paper);
+  background: var(--grow-green-deep);
+}
+
+.grow-hero__image,
+.grow-hero__shade {
+  position: absolute;
+  inset: 0;
+}
+
+.grow-hero__image {
+  object-position: center 55%;
+  animation: grow-hero-arrive 1.2s ease both;
+}
+
+.grow-hero__shade {
+  background:
+    linear-gradient(
+      90deg,
+      rgba(20, 32, 23, 0.77) 0%,
+      rgba(20, 32, 23, 0.45) 42%,
+      rgba(20, 32, 23, 0.08) 100%
+    ),
+    linear-gradient(
+      0deg,
+      rgba(20, 32, 23, 0.45) 0%,
+      transparent 50%
+    );
+}
+
+.grow-hero__content {
+  position: relative;
+  z-index: 1;
+  width: min(780px, 100%);
+}
+
+.grow-hero__content .grow-eyebrow {
+  margin-bottom: clamp(1.5rem, 4vw, 3rem);
+}
+
+.grow-hero h1 {
+  margin-bottom: 1.8rem;
+  font-size: clamp(3.5rem, 8.6vw, 8.2rem);
+  letter-spacing: -0.075em;
+  line-height: 0.91;
+}
+
+.grow-hero h1 em {
+  color: #d7ddc1;
+}
+
+.grow-hero__intro {
+  max-width: 390px;
+  margin-bottom: 2rem;
+  color: rgba(250, 245, 233, 0.86);
+  font-size: clamp(0.94rem, 1.3vw, 1.08rem);
+  line-height: 1.8;
+}
+
+.grow-hero__index {
+  position: absolute;
+  z-index: 1;
+  right: clamp(1.5rem, 5vw, 5rem);
+  bottom: 3rem;
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  font-size: 0.62rem;
+  letter-spacing: 0.14em;
+}
+
+.grow-hero__index-line {
+  display: block;
+  width: 52px;
+  height: 1px;
+  background: rgba(250, 245, 233, 0.65);
+}
+
+.grow-hero__side-note {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  right: 2rem;
+  margin: 0;
+  color: rgba(250, 245, 233, 0.8);
+  font-size: 0.61rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  writing-mode: vertical-rl;
+}
+
+
+/* =========================================================
+   02 — THE GARDEN
+   ========================================================= */
+
+.grow-garden {
+  display: grid;
+  grid-template-columns: 1.05fr 0.85fr;
+  column-gap: clamp(3rem, 9vw, 9rem);
+  row-gap: 3.5rem;
+  padding-top: clamp(6rem, 11vw, 11rem);
+  padding-bottom: clamp(6rem, 12vw, 12rem);
+  background: var(--grow-cream);
+}
+
+.grow-garden__heading {
+  align-self: end;
+  padding-bottom: 1rem;
+}
+
+.grow-garden__heading h2,
+.grow-notes__heading h2 {
+  margin-bottom: 0;
+  font-size: clamp(3.1rem, 6.3vw, 6.3rem);
+  letter-spacing: -0.075em;
+  line-height: 0.98;
+}
+
+.grow-garden__heading h2 em,
+.grow-notes__heading h2 em {
+  color: var(--grow-green-soft);
+}
+
+.grow-garden__body {
+  align-self: end;
+  max-width: 440px;
+  padding-bottom: 1rem;
+}
+
+.grow-garden__body .grow-garden__lead {
+  margin-bottom: 1.5rem;
+  color: var(--grow-green);
+  font-size: clamp(1.25rem, 2vw, 1.7rem);
+  line-height: 1.45;
+}
+
+.grow-garden__body .grow-body-copy {
+  margin-bottom: 1.1rem;
+}
+
+.grow-dark-link {
+  margin-top: 1rem;
+  color: var(--grow-green);
+}
+
+.grow-garden__image {
+  grid-column: 1;
+  grid-row: 2;
+  height: clamp(350px, 46vw, 620px);
+}
+
+.grow-garden__image img {
+  object-position: center;
+}
+
+.grow-garden__image figcaption {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 1.2rem;
+  color: white;
+  background: linear-gradient(transparent, rgba(23, 34, 24, 0.68));
+  font-size: 0.68rem;
+}
+
+.grow-garden__image figcaption span:first-child {
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.grow-garden__detail {
+  grid-column: 2;
+  grid-row: 2;
+  align-self: center;
+  justify-self: start;
+  width: 78%;
+  height: clamp(240px, 30vw, 390px);
+  margin-top: 5rem;
+  margin-left: 5%;
+  transform: rotate(2deg);
+}
+
+.grow-garden__detail-note {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  padding: 0.9rem 1rem;
+  color: var(--grow-green-deep);
+  background: var(--grow-paper);
+  font-family: Georgia, serif;
+  font-size: 0.85rem;
+  font-style: italic;
+}
+
+.grow-garden__stamp {
+  position: absolute;
+  top: 52%;
+  right: 5%;
+  display: grid;
+  width: 90px;
+  height: 90px;
+  place-items: center;
+  border: 1px solid rgba(53, 75, 56, 0.55);
+  border-radius: 50%;
+  color: var(--grow-green);
+  font-size: 0.57rem;
+  letter-spacing: 0.12em;
+  transform: rotate(12deg);
+}
+
+
+/* =========================================================
+   03 — THE LIVING LAB
+   ========================================================= */
+
+.grow-lab {
+  padding-top: clamp(4rem, 7vw, 7rem);
+  padding-bottom: 0;
+  color: var(--grow-paper);
+  background: var(--grow-green);
+}
+
+.grow-lab__top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 2rem;
+  padding-bottom: 1.7rem;
+  border-bottom: 1px solid rgba(250, 245, 233, 0.25);
+}
+
+.grow-lab__top .grow-eyebrow {
+  margin-bottom: 0.7rem;
+}
+
+.grow-lab__number {
+  margin-bottom: 0;
+  color: rgba(250, 245, 233, 0.62);
+  font-size: 0.6rem;
+  letter-spacing: 0.12em;
+}
+
+.grow-lab__symbol {
+  color: #d7ddc1;
+  font-size: 2.8rem;
+  line-height: 1;
+}
+
+.grow-lab__grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  align-items: center;
+  gap: clamp(3rem, 9vw, 9rem);
+  padding-top: clamp(4rem, 8vw, 8rem);
+  padding-bottom: clamp(5rem, 9vw, 9rem);
+}
+
+.grow-lab__copy h2 {
+  margin-bottom: 2.5rem;
+  font-size: clamp(3.5rem, 7vw, 7rem);
+  letter-spacing: -0.075em;
+  line-height: 0.9;
+}
+
+.grow-lab__copy h2 em {
+  color: #d7ddc1;
+}
+
+.grow-lab__lead {
+  max-width: 440px;
+  margin-bottom: 1.5rem;
+  color: #f2ead9;
+  font-size: clamp(1.15rem, 1.8vw, 1.55rem);
+  line-height: 1.55;
+}
+
+.grow-lab__description {
+  max-width: 420px;
+  margin-bottom: 1.1rem;
+  color: rgba(250, 245, 233, 0.72);
+  font-size: 0.93rem;
+  line-height: 1.9;
+}
+
+.grow-lab__topics {
+  display: grid;
+  gap: 0;
+  margin-top: 2.5rem;
+  border-top: 1px solid rgba(250, 245, 233, 0.28);
+}
+
+.grow-lab__topics span {
+  padding: 0.9rem 0;
+  border-bottom: 1px solid rgba(250, 245, 233, 0.28);
+  color: #f2ead9;
+  font-size: 0.73rem;
+  letter-spacing: 0.035em;
+}
+
+.grow-lab__visual {
+  position: relative;
+  min-height: 600px;
+}
+
+.grow-lab__main-image {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 82%;
+  height: 490px;
+}
+
+.grow-lab__main-image img {
+  object-position: center;
+}
+
+.grow-lab__small-image {
+  position: absolute;
+  z-index: 1;
+  bottom: 0;
+  left: 0;
+  width: 48%;
+  height: 270px;
+  border: 8px solid var(--grow-green);
+}
+
+.grow-lab__image-note {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 43%;
+  margin: 0;
+  color: #d7ddc1;
+  font-family: Georgia, serif;
+  font-size: clamp(1.1rem, 1.7vw, 1.5rem);
+  font-style: italic;
+  line-height: 1.5;
+  transform: translateY(110%);
+}
+
+.grow-lab__bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  padding: 1.4rem 0;
+  border-top: 1px solid rgba(250, 245, 233, 0.25);
+  color: rgba(250, 245, 233, 0.75);
+  font-size: 0.7rem;
+  letter-spacing: 0.07em;
+}
+
+.grow-lab__bottom span:last-child {
+  color: #d7ddc1;
+  font-size: 1.5rem;
+}
+
+
+/* =========================================================
+   04 — FIELD NOTES
+   ========================================================= */
+
+.grow-notes {
+  padding-top: clamp(6rem, 11vw, 11rem);
+  padding-bottom: clamp(5rem, 9vw, 9rem);
+  background: var(--grow-paper);
+}
+
+.grow-notes__heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 3rem;
+  margin-bottom: clamp(3rem, 6vw, 6rem);
+}
+
+.grow-notes__heading h2 {
+  font-size: clamp(3.2rem, 6vw, 6.2rem);
+}
+
+.grow-notes__heading > p {
+  max-width: 310px;
+  margin-bottom: 0.5rem;
+  color: var(--grow-pencil);
+  font-size: 0.92rem;
+  line-height: 1.9;
+}
+
+.grow-notes__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: start;
+  gap: clamp(1.25rem, 3vw, 3rem);
+}
+
+.grow-note--offset {
+  margin-top: 5rem;
+}
+
+.grow-note__image {
+  position: relative;
+  height: clamp(260px, 31vw, 420px);
+  margin-bottom: 1.5rem !important;
+}
+
+.grow-note:nth-child(1) .grow-note__image img {
+  object-position: center;
+}
+
+.grow-note:nth-child(2) .grow-note__image img {
+  object-position: 50% 50%;
+}
+
+.grow-note:nth-child(3) .grow-note__image img {
+  object-position: center;
+}
+
+.grow-note__number {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  display: grid;
+  width: 40px;
+  height: 40px;
+  place-items: center;
+  border-radius: 50%;
+  color: var(--grow-green);
+  background: var(--grow-paper);
+  font-size: 0.68rem;
+}
+
+.grow-note__meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.7rem;
+  margin-bottom: 1rem;
+  color: var(--grow-green-soft);
+  font-size: 0.58rem;
+  letter-spacing: 0.12em;
+}
+
+.grow-note h3 {
+  max-width: 350px;
+  margin-bottom: 0.8rem;
+  color: var(--grow-green-deep);
+  font-family: Georgia, serif;
+  font-size: clamp(1.35rem, 2vw, 1.8rem);
+  line-height: 1.2;
+}
+
+.grow-note > p {
+  max-width: 350px;
+  margin-bottom: 0;
+  color: var(--grow-pencil);
+  font-size: 0.86rem;
+  line-height: 1.85;
+}
+
+.grow-notes__footnote {
+  margin: 5rem 0 0;
+  padding-top: 1.4rem;
+  border-top: 1px solid var(--grow-line);
+  color: var(--grow-pencil);
+  font-family: Georgia, serif;
+  font-size: 0.95rem;
+  font-style: italic;
+  text-align: center;
+}
+
+
+/* =========================================================
+   05 — CLOSING INVITATION
+   ========================================================= */
+
+.grow-close {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: 640px;
+  min-height: min(760px, 85svh);
+  padding: clamp(5rem, 10vw, 9rem) clamp(1.5rem, 8vw, 8rem);
+  overflow: hidden;
+  color: var(--grow-paper);
+  background: var(--grow-green-deep);
+}
+
+.grow-close__image,
+.grow-close__shade {
+  position: absolute;
+  inset: 0;
+}
+
+.grow-close__image {
+  object-position: center 55%;
+}
+
+.grow-close__shade {
+  background: linear-gradient(
+    90deg,
+    rgba(23, 35, 25, 0.83),
+    rgba(23, 35, 25, 0.44) 65%,
+    rgba(23, 35, 25, 0.18)
+  );
+}
+
+.grow-close__content {
+  position: relative;
+  z-index: 1;
+  max-width: 850px;
+}
+
+.grow-close__content h2 {
+  margin-bottom: 1.8rem;
+  font-size: clamp(3rem, 6.6vw, 6.5rem);
+  letter-spacing: -0.075em;
+  line-height: 0.98;
+}
+
+.grow-close__content h2 em {
+  color: #d7ddc1;
+}
+
+.grow-close__content > p:not(.grow-eyebrow) {
+  max-width: 440px;
+  margin-bottom: 2rem;
+  color: rgba(250, 245, 233, 0.82);
+  font-size: 0.95rem;
+  line-height: 1.85;
+}
+
+.grow-close__mark {
+  position: absolute;
+  right: clamp(2rem, 8vw, 8rem);
+  bottom: 2rem;
+  color: rgba(250, 245, 233, 0.6);
+  font-family: Georgia, serif;
+  font-size: 5rem;
+  font-style: italic;
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.grow-footer {
+  padding: 3.5rem clamp(1.25rem, 7vw, 7.5rem) 1.4rem;
+  color: var(--grow-paper);
+  background: var(--grow-green-deep);
+}
+
+.grow-footer__top {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr 1fr;
+  align-items: center;
+  gap: 2rem;
+  padding-bottom: 3rem;
+}
+
+.grow-footer__brand {
+  width: fit-content;
+  font-family: Georgia, serif;
+  font-size: 2.5rem;
+  letter-spacing: -0.08em;
+}
+
+.grow-footer__top > p {
+  margin: 0;
+  color: rgba(250, 245, 233, 0.68);
+  font-size: 0.83rem;
+  line-height: 1.7;
+}
+
+.grow-footer__link {
+  justify-self: end;
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  padding-bottom: 0.55rem;
+  border-bottom: 1px solid rgba(250, 245, 233, 0.6);
+  font-size: 0.77rem;
+}
+
+.grow-footer__bottom {
+  display: flex;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding-top: 1.3rem;
+  border-top: 1px solid rgba(250, 245, 233, 0.22);
+  color: rgba(250, 245, 233, 0.56);
+  font-size: 0.65rem;
+}
+
+
+/* =========================================================
+   ANIMATION
+   ========================================================= */
+
+@keyframes grow-hero-arrive {
+  from {
+    transform: scale(1.04);
+  }
+
+  to {
+    transform: scale(1);
+  }
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+  .grow-section {
+    padding-right: 5vw;
+    padding-left: 5vw;
+  }
+
+  .grow-garden {
+    column-gap: 2.5rem;
+  }
+
+  .grow-garden__stamp {
+    right: 2%;
+    width: 72px;
+    height: 72px;
+  }
+
+  .grow-lab__grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+  }
+
+  .grow-lab__visual {
+    min-height: 520px;
+  }
+
+  .grow-lab__main-image {
+    width: 90%;
+    height: 410px;
+  }
+
+  .grow-lab__small-image {
+    height: 220px;
+  }
+
+  .grow-note__image {
+    height: 300px;
+  }
+
+  .grow-note__meta {
+    flex-wrap: wrap;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 650px) {
+  .grow-hero {
+    min-height: 780px;
+    min-height: 92svh;
+    align-items: flex-end;
+    padding: 8rem 1.4rem 6rem;
+  }
+
+  .grow-hero__image {
+    object-position: 58% center;
+  }
+
+  .grow-hero__shade {
+    background:
+      linear-gradient(
+        0deg,
+        rgba(20, 32, 23, 0.82) 0%,
+        rgba(20, 32, 23, 0.45) 48%,
+        rgba(20, 32, 23, 0.12) 100%
+      );
+  }
+
+  .grow-hero h1 {
+    font-size: clamp(3.6rem, 15vw, 5.7rem);
+  }
+
+  .grow-hero__intro {
+    max-width: 310px;
+  }
+
+  .grow-hero__side-note {
+    top: 7rem;
+    right: 1.3rem;
+  }
+
+  .grow-hero__index {
+    right: auto;
+    bottom: 1.6rem;
+    left: 1.4rem;
+  }
+
+  .grow-section {
+    padding: 5rem 1.3rem;
+  }
+
+  .grow-garden {
+    grid-template-columns: 1fr;
+    gap: 2.2rem;
+  }
+
+  .grow-garden__heading {
+    padding-bottom: 0;
+  }
+
+  .grow-garden__heading h2,
+  .grow-notes__heading h2 {
+    font-size: clamp(3.3rem, 13vw, 5rem);
+  }
+
+  .grow-garden__body {
+    max-width: 520px;
+    padding-bottom: 0;
+  }
+
+  .grow-garden__image {
+    grid-column: 1;
+    grid-row: auto;
+    height: 420px;
+  }
+
+  .grow-garden__detail {
+    grid-column: 1;
+    grid-row: auto;
+    width: 72%;
+    height: 280px;
+    margin-top: 0.5rem;
+    margin-left: auto;
+  }
+
+  .grow-garden__stamp {
+    top: auto;
+    right: auto;
+    bottom: 18rem;
+    left: 1.5rem;
+    width: 66px;
+    height: 66px;
+    font-size: 0.5rem;
+  }
+
+  .grow-lab {
+    padding-bottom: 0;
+  }
+
+  .grow-lab__grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    padding-top: 3.5rem;
+    padding-bottom: 4rem;
+  }
+
+  .grow-lab__copy h2 {
+    margin-bottom: 1.8rem;
+    font-size: clamp(3.7rem, 14vw, 5.5rem);
+  }
+
+  .grow-lab__visual {
+    min-height: 440px;
+    margin-bottom: 2.5rem;
+  }
+
+  .grow-lab__main-image {
+    width: 87%;
+    height: 350px;
+  }
+
+  .grow-lab__small-image {
+    bottom: 0;
+    width: 49%;
+    height: 200px;
+    border-width: 6px;
+  }
+
+  .grow-lab__image-note {
+    right: 0;
+    bottom: 0;
+    width: 44%;
+    font-size: 1.05rem;
+    transform: translateY(120%);
+  }
+
+  .grow-lab__bottom {
+    font-size: 0.62rem;
+  }
+
+  .grow-notes__heading {
+    display: block;
+    margin-bottom: 3rem;
+  }
+
+  .grow-notes__heading > p {
+    max-width: 340px;
+    margin-top: 1.8rem;
+  }
+
+  .grow-notes__grid {
+    grid-template-columns: 1fr;
+    gap: 3.5rem;
+  }
+
+  .grow-note--offset {
+    margin-top: 0;
+  }
+
+  .grow-note__image {
+    height: min(105vw, 450px);
+  }
+
+  .grow-note h3 {
+    font-size: 1.65rem;
+  }
+
+  .grow-notes__footnote {
+    margin-top: 3.5rem;
+    line-height: 1.7;
+  }
+
+  .grow-close {
+    min-height: 680px;
+    min-height: 85svh;
+    padding: 5rem 1.4rem;
+  }
+
+  .grow-close__image {
+    object-position: 58% center;
+  }
+
+  .grow-close__shade {
+    background: linear-gradient(
+      0deg,
+      rgba(23, 35, 25, 0.83),
+      rgba(23, 35, 25, 0.42)
+    );
+  }
+
+  .grow-close__content h2 {
+    font-size: clamp(3rem, 12vw, 4.8rem);
+  }
+
+  .grow-close__mark {
+    right: 1.4rem;
+    bottom: 0.5rem;
+    font-size: 3.5rem;
+  }
+
+  .grow-footer {
+    padding: 3rem 1.3rem 1.2rem;
+  }
+
+  .grow-footer__top {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+    padding-bottom: 2rem;
+  }
+
+  .grow-footer__brand {
+    font-size: 2.3rem;
+  }
+
+  .grow-footer__link {
+    justify-self: start;
+    margin-top: 0.5rem;
+  }
+
+  .grow-footer__bottom {
+    flex-wrap: wrap;
+    gap: 0.8rem 1.2rem;
+    font-size: 0.6rem;
+  }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .grow-hero__image {
+    animation: none;
+  }
+
+  .grow-image-frame img,
+  .grow-text-link,
+  .grow-dark-link {
+    transition: none;
+  }
+}
+
+
+
+
+/* Living Laboratory — cream version */
+
+.grow-lab {
+  padding-top: clamp(4rem, 7vw, 7rem);
+  padding-bottom: 0;
+  color: var(--grow-ink);
+  background: var(--grow-cream);
+}
+
+.grow-lab__top {
+  border-bottom: 1px solid var(--grow-line);
+}
+
+.grow-lab__number {
+  color: var(--grow-pencil);
+}
+
+.grow-lab__symbol {
+  color: var(--grow-green);
+}
+
+.grow-lab__copy h2 {
+  color: var(--grow-ink);
+}
+
+.grow-lab__copy h2 em {
+  color: var(--grow-green-soft);
+}
+
+.grow-lab__lead {
+  color: var(--grow-green);
+}
+
+.grow-lab__description {
+  color: var(--grow-pencil);
+}
+
+.grow-lab__topics {
+  border-color: var(--grow-line);
+}
+
+.grow-lab__topics span {
+  color: var(--grow-green);
+  border-color: var(--grow-line);
+}
+
+.grow-lab__small-image {
+  border-color: var(--grow-cream);
+}
+
+.grow-lab__image-note {
+  color: var(--grow-green);
+}
+
+.grow-lab__bottom {
+  border-color: var(--grow-line);
+  color: var(--grow-pencil);
+}
+
+.grow-lab__bottom span:last-child {
+  color: var(--grow-green);
+}

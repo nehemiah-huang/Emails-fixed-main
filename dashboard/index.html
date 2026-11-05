@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#F2EAD9">
+  <title>Dashboard — Ɛdan</title>
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="icon" href="/images/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/tokens.css">
+  <link rel="stylesheet" href="/css/pages/admin.css">
+</head>
+<body class="page-admin">
+  <div class="admin">
+    <header class="admin__header">
+      <a class="admin__brand" href="/">Ɛdan</a>
+      <div class="admin__actions">
+        <a class="admin__button" href="/">View site</a>
+        <button id="adminLogout" class="admin__button" type="button">Log out</button>
+      </div>
+    </header>
+
+    <section id="overview" class="admin__intro">
+      <span class="eyebrow">team dashboard</span>
+      <h1>Manage <em>Ɛdan.</em></h1>
+      <p id="adminMessage" role="status" aria-live="polite">Checking your access…</p>
+    </section>
+
+    <main id="adminDashboard" hidden>
+      <section class="admin__kpis" aria-label="Membership overview">
+        <article class="admin__kpi" data-kpi="active_members">
+          <p class="admin__kpi-label">Active members</p>
+          <p class="admin__kpi-value">—</p>
+          <p class="admin__kpi-note">Paid and within their membership period</p>
+        </article>
+        <article class="admin__kpi" data-kpi="pending_review">
+          <p class="admin__kpi-label">Pending review</p>
+          <p class="admin__kpi-value">—</p>
+          <p class="admin__kpi-note">Applications waiting for a decision</p>
+        </article>
+        <article class="admin__kpi" data-kpi="expired">
+          <p class="admin__kpi-label">Expired</p>
+          <p class="admin__kpi-value">—</p>
+          <p class="admin__kpi-note">Memberships past their end date</p>
+        </article>
+        <article class="admin__kpi" data-kpi="total_bookings">
+          <p class="admin__kpi-label">Stay bookings</p>
+          <p class="admin__kpi-value">—</p>
+          <p class="admin__kpi-note">Confirmed and completed stays</p>
+        </article>
+        <article class="admin__kpi" data-kpi="appointments">
+          <p class="admin__kpi-label">Appointments</p>
+          <p class="admin__kpi-value">—</p>
+          <p class="admin__kpi-note">Upcoming requests and confirmed sessions</p>
+        </article>
+        <p id="kpiError" class="admin__review-error admin__kpis-error" role="alert" hidden></p>
+      </section>
+
+      <div class="admin__grid">
+        <article id="applications" class="admin__card admin__card--full" aria-labelledby="applicationsHeading">
+          <span class="eyebrow">membership applications</span>
+          <h2 id="applicationsHeading">Applications</h2>
+          <p id="applicationsError" class="admin__review-error" role="alert" hidden></p>
+          <div class="admin__table-wrap">
+            <table class="admin__table">
+              <thead>
+                <tr><th scope="col">Name</th><th scope="col">Email</th><th scope="col">Tier</th><th scope="col">Practice</th><th scope="col">Based in</th><th scope="col">Applied</th><th scope="col">Status</th><th scope="col"><span class="visually-hidden">Actions</span></th></tr>
+              </thead>
+              <tbody id="applicationsBody"></tbody>
+            </table>
+          </div>
+        </article>
+
+        <article id="members" class="admin__card admin__card--full" aria-labelledby="membersHeading">
+          <div class="admin__section-head">
+            <div>
+              <span class="eyebrow">memberships</span>
+              <h2 id="membersHeading">Members</h2>
+            </div>
+            <button id="membersExportButton" class="admin__button" type="button">Download CSV</button>
+          </div>
+
+          <p id="membersError" class="admin__review-error" role="alert" hidden></p>
+
+          <div class="admin__table-wrap">
+            <table class="admin__table">
+              <thead>
+                <tr><th scope="col">Email</th><th scope="col">Tier</th><th scope="col">Status</th><th scope="col">Ends</th></tr>
+              </thead>
+              <tbody id="membersBody"></tbody>
+            </table>
+          </div>
+        </article>
+        <article id="bookings" class="admin__card admin__card--full" aria-labelledby="bookingsHeading">
+          <div class="admin__section-head">
+            <div>
+              <span class="eyebrow">stay bookings</span>
+              <h2 id="bookingsHeading">Bookings</h2>
+            </div>
+            <button id="addBookingButton" class="admin__button admin__button--solid" type="button">Add booking</button>
+          </div>
+
+          <div class="admin__toolbar">
+            <div class="admin__segment" role="group" aria-label="Show bookings">
+              <button class="admin__segment-button" type="button" data-booking-view="upcoming" aria-pressed="true">Upcoming</button>
+              <button class="admin__segment-button" type="button" data-booking-view="past" aria-pressed="false">Past</button>
+              <button class="admin__segment-button" type="button" data-booking-view="all" aria-pressed="false">All</button>
+            </div>
+            <input id="bookingSearch" class="admin__file admin__search" type="search" placeholder="Search by name, email or reference" aria-label="Search bookings">
+          </div>
+
+          <p id="bookingsError" class="admin__review-error" role="alert" hidden></p>
+
+          <div class="admin__table-wrap">
+            <table class="admin__table">
+              <thead>
+                <tr>
+                  <th scope="col">Reference</th>
+                  <th scope="col">Guest</th>
+                  <th scope="col">Room</th>
+                  <th scope="col">Dates</th>
+                  <th scope="col">Guests</th>
+                  <th scope="col">Total</th>
+                  <th scope="col">Status</th>
+                  <th scope="col">Source</th>
+                  <th scope="col"><span class="visually-hidden">Actions</span></th>
+                </tr>
+              </thead>
+              <tbody id="bookingsBody"></tbody>
+            </table>
+          </div>
+        </article>
+
+        <article id="appointments" class="admin__card admin__card--full" aria-labelledby="appointmentsHeading">
+          <div class="admin__section-head">
+            <div><span class="eyebrow">member appointments</span><h2 id="appointmentsHeading">Appointments</h2></div>
+          </div>
+          <form id="appointmentSlotForm" class="admin__inline-form">
+            <p class="admin__hint">Add a future time members can request. Times are shown in your local timezone.</p>
+            <div class="admin__inline-row">
+              <label class="admin__label">Starts<input id="appointmentSlotStart" class="admin__file" type="datetime-local" required></label>
+              <label class="admin__label">Ends<input id="appointmentSlotEnd" class="admin__file" type="datetime-local" required></label>
+              <button class="admin__button admin__button--solid" type="submit">Add available time</button>
+            </div>
+            <p id="appointmentSlotError" class="admin__review-error" role="alert" hidden></p>
+          </form>
+          <div class="admin__table-wrap"><table class="admin__table"><thead><tr><th scope="col">Reference</th><th scope="col">Member</th><th scope="col">Email</th><th scope="col">WhatsApp</th><th scope="col">Type</th><th scope="col">Requested date &amp; time</th><th scope="col">Note</th><th scope="col">Status</th><th scope="col"><span class="visually-hidden">Actions</span></th></tr></thead><tbody id="appointmentsBody"></tbody></table></div>
+          <div class="admin__table-wrap"><table class="admin__table"><thead><tr><th scope="col">Available time</th><th scope="col">Slot status</th><th scope="col">Notes</th><th scope="col"><span class="visually-hidden">Actions</span></th></tr></thead><tbody id="appointmentSlotsBody"></tbody></table></div>
+          <p id="appointmentsError" class="admin__review-error" role="alert" hidden></p>
+        </article>
+
+        <article class="admin__card admin__card--full" aria-labelledby="roomsHeading">
+          <span class="eyebrow">rooms</span>
+          <h2 id="roomsHeading">Rooms</h2>
+          <p class="admin__hint">Add each room by name. Closed rooms cannot take new bookings but keep their existing ones.</p>
+
+          <div class="admin__table-wrap">
+            <table class="admin__table">
+              <thead>
+                <tr><th scope="col">Room</th><th scope="col">Status</th><th scope="col">Photo</th><th scope="col"><span class="visually-hidden">Actions</span></th></tr>
+              </thead>
+              <tbody id="roomsBody"></tbody>
+            </table>
+          </div>
+
+          <form id="roomForm" class="admin__inline-form">
+            <label class="admin__label" for="roomName">New room name</label>
+            <div class="admin__inline-row">
+              <input id="roomName" class="admin__file" type="text" maxlength="80" required>
+              <button class="admin__button admin__button--solid" type="submit">Add room</button>
+            </div>
+            <label class="admin__label" for="roomPhoto">Room photo (optional)</label>
+            <input id="roomPhoto" class="admin__file" type="file">
+            <input id="roomPhotoInput" type="file" hidden>
+            <p id="roomError" class="admin__review-error" role="alert" hidden></p>
+          </form>
+        </article>
+
+        <article class="admin__card admin__card--full" aria-labelledby="blocksHeading">
+          <span class="eyebrow">room availability</span>
+          <h2 id="blocksHeading">Blocked dates</h2>
+          <p class="admin__hint">Close a room for maintenance or team use. The end date is the first day the room is free again. Dates with a confirmed booking must be cancelled first.</p>
+
+          <form id="blockForm" class="admin__block-form">
+            <label class="admin__label" for="blockRoom">Room</label>
+            <select id="blockRoom" class="admin__file" required></select>
+
+            <label class="admin__label" for="blockStart">From</label>
+            <input id="blockStart" class="admin__file" type="date" required>
+
+            <label class="admin__label" for="blockEnd">Until (first day free)</label>
+            <input id="blockEnd" class="admin__file" type="date" required>
+
+            <label class="admin__label" for="blockReason">Reason (optional)</label>
+            <input id="blockReason" class="admin__file" type="text" maxlength="200">
+
+            <p id="blockError" class="admin__review-error" role="alert" hidden></p>
+
+            <button id="blockSubmit" class="admin__button admin__button--solid" type="submit">Block dates</button>
+          </form>
+
+          <div class="admin__table-wrap">
+            <table class="admin__table">
+              <thead>
+                <tr><th scope="col">Room</th><th scope="col">Dates</th><th scope="col">Reason</th><th scope="col"><span class="visually-hidden">Actions</span></th></tr>
+              </thead>
+              <tbody id="blocksBody"></tbody>
+            </table>
+          </div>
+        </article>
+      </div>
+
+      <div class="admin__grid">
+        <article id="member-settings" class="admin__card admin__card--full" aria-labelledby="memberSettingsHeading">
+          <span class="eyebrow">members page</span>
+          <h2 id="memberSettingsHeading">Page settings</h2>
+          <p class="admin__hint">Update the welcome area, section introductions, images, and benefits shown to active members. Use paths such as /images/tree.jpg.</p>
+          <a class="admin__button" href="/members/" target="_blank" rel="noopener">Preview Members page</a>
+          <form id="memberSettingsForm" class="admin__settings-form">
+            <div id="memberSettingsFields" class="admin__settings-fields"></div>
+            <p id="memberSettingsError" class="admin__review-error" role="status"></p>
+            <button id="memberSettingsSave" class="admin__button admin__button--solid" type="submit">Save page settings</button>
+          </form>
+        </article>
+
+        <article id="member-insights" class="admin__card admin__card--full" aria-labelledby="memberInsightsHeading">
+          <span class="eyebrow">member activity</span>
+          <h2 id="memberInsightsHeading">What members are viewing</h2>
+          <p class="admin__hint">Published content is ranked by recorded member views. Individual member identities are not shown.</p>
+          <p id="memberInsightsError" class="admin__review-error" role="alert" hidden></p>
+          <div class="admin__table-wrap">
+            <table class="admin__table">
+              <thead><tr><th scope="col">Area</th><th scope="col">Content</th><th scope="col">Views</th><th scope="col">Last viewed</th></tr></thead>
+              <tbody id="memberInsightsBody"></tbody>
+            </table>
+          </div>
+        </article>
+
+        <article id="content" class="admin__card admin__card--full" aria-labelledby="contentHeading">
+          <span class="eyebrow">members page</span>
+          <h2 id="contentHeading">Members content</h2>
+          <p class="admin__hint">Drafts stay hidden from members until published. Upload a photo or video in the editor, or enter an existing site path or secure web address.</p>
+
+          <div class="admin__toolbar">
+            <div class="admin__segment" role="group" aria-label="Content type">
+              <button class="admin__segment-button" type="button" data-content-type="gatherings" aria-pressed="true">Gatherings</button>
+              <button class="admin__segment-button" type="button" data-content-type="research" aria-pressed="false">Research</button>
+              <button class="admin__segment-button" type="button" data-content-type="process" aria-pressed="false">In process</button>
+              <button class="admin__segment-button" type="button" data-content-type="videos" aria-pressed="false">Bonus videos</button>
+            </div>
+            <button id="contentAddButton" class="admin__button admin__button--solid" type="button">Add entry</button>
+          </div>
+
+          <p id="contentError" class="admin__review-error" role="alert" hidden></p>
+
+          <div class="admin__table-wrap">
+            <table class="admin__table">
+              <thead>
+                <tr><th scope="col">Title</th><th scope="col">Format</th><th scope="col">Status</th><th scope="col">Order</th><th scope="col"><span class="visually-hidden">Actions</span></th></tr>
+              </thead>
+              <tbody id="contentBody"></tbody>
+            </table>
+          </div>
+        </article>
+      </div>
+
+      <nav class="admin__tabbar" aria-label="Dashboard sections">
+        <a class="admin__tabbar-link" href="#overview" data-section="overview">Overview</a>
+        <a class="admin__tabbar-link" href="#applications" data-section="applications">Applications</a>
+        <a class="admin__tabbar-link" href="#members" data-section="members">Members</a>
+        <a class="admin__tabbar-link" href="#bookings" data-section="bookings">Bookings</a>
+        <a class="admin__tabbar-link" href="#appointments" data-section="appointments">Appointments</a>
+        <a class="admin__tabbar-link" href="#member-settings" data-section="member-settings">Page settings</a>
+        <a class="admin__tabbar-link" href="#member-insights" data-section="member-insights">Insights</a>
+        <a class="admin__tabbar-link" href="#content" data-section="content">Content</a>
+      </nav>
+
+      <dialog id="reviewDialog" class="admin__dialog" aria-labelledby="reviewHeading">
+        <form id="reviewForm" class="admin__review">
+          <span class="eyebrow">membership application</span>
+          <h2 id="reviewHeading">Review application</h2>
+
+          <dl class="admin__details" id="reviewDetails"></dl>
+
+          <label class="admin__label" for="reviewTier">Membership type</label>
+          <select id="reviewTier" class="admin__file" required>
+            <option value="">Choose monthly or annual</option>
+            <option value="monthly">Monthly</option>
+            <option value="annual">Annual</option>
+          </select>
+
+          <label class="admin__label" for="reviewStart">Start date</label>
+          <input id="reviewStart" class="admin__file" type="date" required>
+
+          <label class="admin__label" for="reviewEnd">End date</label>
+          <input id="reviewEnd" class="admin__file" type="date" required>
+
+          <p id="reviewError" class="admin__review-error" role="alert" hidden></p>
+
+          <div class="admin__review-actions">
+            <button id="approveButton" class="admin__button admin__button--solid" type="button">Approve</button>
+            <button id="rejectButton" class="admin__button admin__button--danger" type="button">Reject</button>
+            <button id="reviewCancel" class="admin__button" type="button">Cancel</button>
+          </div>
+        </form>
+      </dialog>
+
+      <dialog id="contentDialog" class="admin__dialog admin__dialog--wide" aria-labelledby="contentDialogHeading">
+        <form id="contentForm" class="admin__review">
+          <span class="eyebrow">members content</span>
+          <h2 id="contentDialogHeading">Edit entry</h2>
+          <div id="contentFields" class="admin__form-grid"></div>
+          <p id="contentFormError" class="admin__review-error" role="alert" hidden></p>
+          <div class="admin__review-actions">
+            <button id="contentSave" class="admin__button admin__button--solid" type="submit">Save</button>
+            <button id="contentCancel" class="admin__button" type="button">Cancel</button>
+          </div>
+        </form>
+      </dialog>
+
+      <dialog id="bookingDialog" class="admin__dialog admin__dialog--wide" aria-labelledby="bookingDialogHeading">
+        <div class="admin__review">
+          <span class="eyebrow">stay booking</span>
+          <h2 id="bookingDialogHeading">Booking details</h2>
+          <div id="bookingDetails"></div>
+          <p id="bookingDetailError" class="admin__review-error" role="alert" hidden></p>
+          <div id="bookingActions" class="admin__review-actions"></div>
+          <div class="admin__review-actions">
+            <button id="bookingDialogClose" class="admin__button" type="button">Close</button>
+          </div>
+        </div>
+      </dialog>
+
+      <dialog id="manualBookingDialog" class="admin__dialog admin__dialog--wide" aria-labelledby="manualBookingHeading">
+        <form id="manualBookingForm" class="admin__review">
+          <span class="eyebrow">manual booking</span>
+          <h2 id="manualBookingHeading">Add a booking</h2>
+          <p class="admin__hint">For bookings received by phone or WhatsApp. These are recorded as manual and are not linked to a Paystack payment.</p>
+
+          <div class="admin__form-grid">
+            <label class="admin__label" for="manualRoom">Room</label>
+            <select id="manualRoom" class="admin__file" required></select>
+
+            <label class="admin__label" for="manualRate">Rate</label>
+            <select id="manualRate" class="admin__file" required>
+              <option value="room">Room only (GH₵650 / night)</option>
+              <option value="breakfast">With breakfast (GH₵700 / night)</option>
+            </select>
+
+            <label class="admin__label" for="manualCheckIn">Check-in</label>
+            <input id="manualCheckIn" class="admin__file" type="date" required>
+
+            <label class="admin__label" for="manualCheckOut">Check-out</label>
+            <input id="manualCheckOut" class="admin__file" type="date" required>
+
+            <label class="admin__label" for="manualGuests">Guests</label>
+            <select id="manualGuests" class="admin__file" required>
+              <option value="1">1 guest</option>
+              <option value="2">2 guests</option>
+            </select>
+          </div>
+
+          <div class="admin__form-grid">
+            <label class="admin__label" for="manualName">Guest full name</label>
+            <input id="manualName" class="admin__file" type="text" maxlength="120" required>
+
+            <label class="admin__label" for="manualEmail">Email</label>
+            <input id="manualEmail" class="admin__file" type="email" maxlength="254" required>
+
+            <label class="admin__label" for="manualPhone">Phone</label>
+            <input id="manualPhone" class="admin__file" type="tel" maxlength="40" required>
+
+            <label class="admin__label" for="manualNotes">Notes (optional)</label>
+            <textarea id="manualNotes" class="admin__file" rows="3" maxlength="1000"></textarea>
+          </div>
+
+          <p id="manualTotal" class="admin__hint" aria-live="polite"></p>
+          <p id="manualError" class="admin__review-error" role="alert" hidden></p>
+
+          <div class="admin__review-actions">
+            <button id="manualSubmit" class="admin__button admin__button--solid" type="submit">Save booking</button>
+            <button id="manualCancel" class="admin__button" type="button">Cancel</button>
+          </div>
+        </form>
+      </dialog>
+    </main>
+
+    <section id="adminRestricted" class="admin__restricted" hidden>
+      <span class="eyebrow">access restricted</span>
+      <h2>This space is for the <em>Ɛdan team.</em></h2>
+      <p class="admin__hint">This account has not been authorised to manage the site.</p>
+    </section>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script type="module" src="/js/admin.js"></script>
+</body>
+</html>

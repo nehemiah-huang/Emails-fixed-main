@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>Your booking confirmation — Ɛdan</title>
+  <link rel="icon" type="image/png" href="/images/logo.png">
+<link rel="stylesheet" href="/css/base.css">
+<link rel="stylesheet" href="/css/tokens.css">
+<link rel="stylesheet" href="/css/pages/stay.css">
+<link rel="stylesheet" href="/css/pages/stay-confirmation.css">
+<link rel="stylesheet" href="/css/footer.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,300..600&display=swap" rel="stylesheet">
+</head>
+<body class="page-stay">
+
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-nav" id="siteNav">
+  <a href="./" class="nav-logo">
+    <span>Ɛdan</span>
+  </a>
+  <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+    <span></span><span></span><span></span>
+  </button>
+    <nav class="nav-links" id="navLinks" aria-label="Main">
+      <a href="/labs/">Labs</a>
+      <a href="/gather/">Gather</a>
+      <a href="/stay/">Stay</a>
+      <a href="/eat/">Eat</a>
+      <a href="/grow/">Grow</a>
+      <a href="/about/">Who we are</a>
+      <a href="/contact/">Contact</a>
+    </nav>
+  <p class="nav-note" aria-hidden="true">A space for<br>people &amp; ideas</p>
+</header>
+
+<main id="main">
+  <section class="confirm" aria-live="polite">
+    <p class="eyebrow">Ɛdan · Stay</p>
+
+    <div class="confirm__message" id="confirmMessage" hidden>
+      <h1 id="confirmMessageTitle"></h1>
+      <p id="confirmMessageText"></p>
+      <button class="stay-button stay-button--dark" type="button" id="confirmMessageAction" hidden></button>
+    </div>
+
+    <div id="confirmReceipt" hidden>
+      <h1 id="receiptTitle"></h1>
+      <p class="confirm__lede" id="receiptLede"></p>
+
+      <h2>Booking details</h2>
+      <dl class="confirm__list" id="bookingDetails"></dl>
+
+      <h2>Payment receipt</h2>
+      <dl class="confirm__list" id="paymentDetails"></dl>
+
+      <p class="confirm__note">
+        Check-in is from 3:00 PM and check-out is by 11:00 AM.
+        Full payment was taken at booking, so there is nothing more to pay.
+      </p>
+
+      <div class="confirm__actions">
+        <button class="stay-button stay-button--dark" type="button" id="printReceipt">Print receipt</button>
+        <a class="stay-text-link" href="./">Back to Stay</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div data-include="/partials/nav-footer.html"></div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="/js/include.js"></script>
+<script type="module" src="/js/stay-confirmation.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/nav.js"></script>
+</body>
+</html>

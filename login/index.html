@@ -1,0 +1,201 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#F2EAD9">
+  <title>Your Account — Ɛdan</title>
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="icon" href="/images/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/tokens.css">
+  <link rel="stylesheet" href="/css/footer.css">
+  <link rel="stylesheet" href="/css/pages/account.css">
+</head>
+
+<body class="page-account">
+
+  <main class="account">
+    <a class="account__back" href="/stay/">← Back to stays</a>
+
+    <section class="account__layout">
+      <div class="account__visual">
+        <img
+          src="/images/house-two-storey.jpg"
+          alt="The house at Ɛdan"
+        >
+        <div class="account__visual-copy">
+          <span class="account__eyebrow">A place to settle in</span>
+          <h1>Your time<br>at <em>Ɛdan.</em></h1>
+          <p>Make yourself at home.</p>
+        </div>
+      </div>
+
+      <div class="account__panel">
+        <a class="account__wordmark" href="/">Ɛdan</a>
+
+        <div class="account__heading">
+          <span class="account__eyebrow" id="accountEyebrow">WELCOME BACK</span>
+          <h2 id="accountTitle">Log in</h2>
+          <p id="accountDescription">
+            Sign in to continue planning your stay.
+          </p>
+        </div>
+
+        <div class="account__tabs" role="tablist" aria-label="Account access">
+          <button
+            class="account__tab is-active"
+            id="loginTab"
+            type="button"
+            role="tab"
+            aria-selected="true"
+            aria-controls="loginForm"
+          >Log in</button>
+
+          <button
+            class="account__tab"
+            id="signupTab"
+            type="button"
+            role="tab"
+            aria-selected="false"
+            aria-controls="signupForm"
+          >Create account</button>
+        </div>
+
+        <form id="loginForm" class="account__form">
+          <label>
+            Email address
+            <input
+              type="email"
+              name="email"
+              autocomplete="email"
+              placeholder="you@example.com"
+              required
+            >
+          </label>
+
+          <label>
+            Password
+            <input
+              type="password"
+              name="password"
+              autocomplete="current-password"
+              placeholder="Your password"
+              required
+            >
+          </label>
+
+          <button class="account__forgot" type="button" id="forgotPassword">
+            Forgot your password?
+          </button>
+
+          <button class="account__submit" type="submit">
+            Log in <span aria-hidden="true">↗</span>
+          </button>
+        </form>
+
+        <form id="signupForm" class="account__form" hidden>
+          <label>
+            Your name
+            <input
+              type="text"
+              name="fullName"
+              autocomplete="name"
+              placeholder="Full name"
+              maxlength="100"
+              required
+            >
+          </label>
+
+          <label>
+            Email address
+            <input
+              type="email"
+              name="email"
+              autocomplete="email"
+              placeholder="you@example.com"
+              required
+            >
+          </label>
+
+          <label>
+            Create a password
+            <input
+              type="password"
+              name="password"
+              autocomplete="new-password"
+              minlength="8"
+              placeholder="At least 8 characters"
+              required
+            >
+          </label>
+
+          <label>
+            Confirm password
+            <input
+              type="password"
+              name="confirmPassword"
+              autocomplete="new-password"
+              minlength="8"
+              placeholder="Enter your password again"
+              required
+            >
+          </label>
+
+          <button class="account__submit" type="submit">
+            Create account <span aria-hidden="true">↗</span>
+          </button>
+        </form>
+
+        <form id="recoveryForm" class="account__form" hidden>
+          <label>
+            New password
+            <input
+              type="password"
+              name="password"
+              autocomplete="new-password"
+              minlength="8"
+              placeholder="At least 8 characters"
+              required
+            >
+          </label>
+
+          <label>
+            Confirm new password
+            <input
+              type="password"
+              name="confirmPassword"
+              autocomplete="new-password"
+              minlength="8"
+              placeholder="Enter your new password again"
+              required
+            >
+          </label>
+
+          <button class="account__submit" type="submit">
+            Save new password <span aria-hidden="true">↗</span>
+          </button>
+        </form>
+
+        <p class="account__message" id="accountMessage" role="status" aria-live="polite" hidden></p>
+
+        <p class="account__switch" id="accountSwitch">
+          New to Ɛdan?
+          <button type="button" id="switchToSignup">Create an account</button>
+        </p>
+
+        <p class="account__legal">
+          Your guest account is for managing your stays.
+          It does not automatically grant private membership access.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="/js/account.js"></script>
+</body>
+</html>

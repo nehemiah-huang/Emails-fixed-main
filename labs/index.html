@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our labs | Ɛdan</title>
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="icon" href="/images/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+  <meta name="description" content="Four interlinked labs at Ɛdan: Urban Sonic Lab, Ground Works, AI Commons and Fabric of Society.">
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/tokens.css">
+  <link rel="stylesheet" href="/css/footer.css">
+  <link rel="stylesheet" href="/css/pages/labs.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,300;400;500;600&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body class="page-labs">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-nav" id="siteNav">
+    <a href="/" class="nav-logo"><span>Ɛdan</span></a>
+    <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="nav-links" id="navLinks" aria-label="Main">
+      <a href="/">Home</a>
+      <a href="/labs/">Labs</a>
+      <a href="/gather/">Gather</a>
+      <a href="/stay/">Stay</a>
+      <a href="/eat/">Eat</a>
+      <a href="/grow/">Grow</a>
+      <a href="/about/">Who we are</a>
+      <a href="/contact/">Contact</a>
+    </nav>
+    <p class="nav-note" aria-hidden="true">A space for<br>people &amp; ideas</p>
+  </header>
+
+  <main id="main">
+    <!-- IMAGE-LED INTRO -->
+    <section class="labs-hero" aria-labelledby="labs-title">
+      <div class="labs-hero__image" role="img" aria-label="A working studio filled with research materials, notes and objects">
+        <img src="" alt="" fetchpriority="high">
+      </div>
+      <div class="labs-hero__veil"></div>
+      <div class="labs-hero__content">
+        <p class="eyebrow eyebrow--light"><span class="eyebrow__line"></span> Ɛdan / Research &amp; practice</p>
+        <h1 id="labs-title">Four interlinked<br><em>ways of knowing</em><br>the city.</h1>
+        <div class="labs-hero__bottom">
+          <p>A living ecosystem where researching, learning, making and reflecting coexist. A place to experiment with forms of knowing that reach beyond text.</p>
+        </div>
+        <span class="labs-hero__index" aria-hidden="true">01 — 04</span>
+      </div>
+      <div class="labs-hero__caption">A living research practice · Nyaniba Estates, Accra</div>
+    </section>
+
+    <!-- INTERACTIVE RESEARCH FIELD -->
+    <section class="fieldwork" id="fieldwork" aria-labelledby="fieldwork-title">
+      <div class="fieldwork__intro">
+        <p class="eyebrow"><span class="eyebrow__line"></span> The research field / 001</p>
+        <h2 id="fieldwork-title">Knowledge is<br><em>never a straight line.</em></h2>
+        <p class="fieldwork__intro-copy">Four practices, connected by questions that move between people, place, memory and possibility. Select a field to see what it listens for.</p>
+      </div>
+
+      <div class="research-instrument" data-research-instrument>
+        <div class="research-instrument__topline">
+          <span>FIELD RELATIONSHIP MAP</span>
+          <span class="instrument-live"><i></i> OPEN SYSTEM</span>
+        </div>
+        <div class="research-instrument__canvas">
+          <svg class="field-map" viewBox="0 0 760 520" role="img" aria-labelledby="map-title map-desc">
+            <title id="map-title">Four connected research fields</title>
+            <desc id="map-desc">Sound, ground, artificial intelligence and textile research fields are linked around a shared centre.</desc>
+            <defs>
+              <pattern id="mapGrid" width="24" height="24" patternUnits="userSpaceOnUse">
+                <path d="M24 0H0V24" fill="none" stroke="currentColor" stroke-width=".6" opacity=".16"/>
+              </pattern>
+              <filter id="softGlow"><feGaussianBlur stdDeviation="4" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+            </defs>
+            <rect width="760" height="520" fill="url(#mapGrid)"/>
+            <g class="map-orbits" fill="none" stroke="currentColor" stroke-width="1">
+              <ellipse cx="380" cy="260" rx="264" ry="178" transform="rotate(-24 380 260)" stroke-dasharray="3 7" opacity=".55"/>
+              <ellipse cx="380" cy="260" rx="202" ry="128" transform="rotate(34 380 260)" opacity=".25"/>
+              <path d="M112 260 C205 90 555 90 648 260 S205 430 112 260Z" opacity=".25"/>
+            </g>
+            <g class="map-links" fill="none" stroke-width="1.5">
+              <path d="M165 150 C245 165 275 205 350 248" stroke="#8b9bb5"/>
+              <path d="M592 142 C515 170 490 205 410 248" stroke="#a95f47"/>
+              <path d="M160 372 C242 345 282 308 350 272" stroke="#b79b4d"/>
+              <path d="M600 372 C520 340 478 306 410 272" stroke="#6f8870"/>
+              <path d="M165 150 C260 330 495 330 592 142" stroke="currentColor" opacity=".18" stroke-dasharray="4 8"/>
+              <path d="M160 372 C280 150 480 150 600 372" stroke="currentColor" opacity=".18" stroke-dasharray="4 8"/>
+            </g>
+            <g class="map-centre" filter="url(#softGlow)">
+              <circle cx="380" cy="260" r="54" fill="#f3ecdf" stroke="#302e29" stroke-width="1.2"/>
+              <circle cx="380" cy="260" r="43" fill="none" stroke="#302e29" stroke-dasharray="2 5" opacity=".45"/>
+              <text x="380" y="253" text-anchor="middle" fill="#302e29" class="map-centre__small">SHARED</text>
+              <text x="380" y="270" text-anchor="middle" fill="#302e29" class="map-centre__big">FIELD</text>
+            </g>
+            <g class="map-node map-node--sonic" data-map-node="sonic">
+              <circle class="node-halo" cx="165" cy="150" r="47"/>
+              <circle class="node-core" cx="165" cy="150" r="32"/>
+              <g class="node-symbol" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+                <path d="M146 150h7l5-12 8 24 7-24 7 12h5"/>
+                <path d="M146 164h38" opacity=".45"/>
+              </g>
+              <text x="165" y="98" text-anchor="middle">01 / SOUND</text>
+            </g>
+            <g class="map-node map-node--ground" data-map-node="ground">
+              <circle class="node-halo" cx="592" cy="142" r="47"/>
+              <circle class="node-core" cx="592" cy="142" r="32"/>
+              <g class="node-symbol" fill="none" stroke="currentColor" stroke-width="1.4">
+                <path d="M571 139q21-17 42 0t0 0M571 146q21-17 42 0t0 0M571 153q21-17 42 0t0 0M571 160q21-17 42 0t0 0"/>
+              </g>
+              <text x="592" y="90" text-anchor="middle">02 / GROUND</text>
+            </g>
+            <g class="map-node map-node--ai" data-map-node="ai">
+              <circle class="node-halo" cx="160" cy="372" r="47"/>
+              <circle class="node-core" cx="160" cy="372" r="32"/>
+              <g class="node-symbol" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M144 362l16 10 17-13M144 362l2 20 14-10 17 10 0-23M146 382l31 0"/>
+                <circle cx="144" cy="362" r="3" fill="currentColor"/><circle cx="177" cy="359" r="3" fill="currentColor"/><circle cx="177" cy="382" r="3" fill="currentColor"/><circle cx="146" cy="382" r="3" fill="currentColor"/>
+              </g>
+              <text x="160" y="435" text-anchor="middle">03 / AI COMMONS</text>
+            </g>
+            <g class="map-node map-node--fabric" data-map-node="fabric">
+              <circle class="node-halo" cx="600" cy="372" r="47"/>
+              <circle class="node-core" cx="600" cy="372" r="32"/>
+              <g class="node-symbol" fill="none" stroke="currentColor" stroke-width="1.4">
+                <path d="M582 354l36 36M590 350l36 36M582 366l36-16M582 378l36-16M582 390l36-16"/>
+              </g>
+              <text x="600" y="435" text-anchor="middle">04 / MATERIAL</text>
+            </g>
+            <g class="map-particles" fill="#302e29">
+              <circle cx="275" cy="168" r="2"/><circle cx="490" cy="195" r="2.5"/><circle cx="270" cy="344" r="2.5"/><circle cx="495" cy="332" r="2"/>
+              <circle cx="380" cy="114" r="2"/><circle cx="380" cy="407" r="2"/><circle cx="95" cy="260" r="2"/><circle cx="665" cy="260" r="2"/>
+            </g>
+          </svg>
+          <div class="instrument-stamp" aria-hidden="true"><span>Ɛ</span><small>FIELD<br>NOTES</small></div>
+        </div>
+
+        <div class="fieldwork__controls" role="group" aria-label="Choose a research field">
+          <button class="field-tab is-active" type="button" data-field="sonic" aria-pressed="true">
+            <span class="field-tab__number">01</span><span class="field-tab__name">Urban Sonic Lab</span>
+          </button>
+          <button class="field-tab" type="button" data-field="ground" aria-pressed="false">
+            <span class="field-tab__number">02</span><span class="field-tab__name">Ground Works</span>
+          </button>
+          <button class="field-tab" type="button" data-field="ai" aria-pressed="false">
+            <span class="field-tab__number">03</span><span class="field-tab__name">AI Commons</span>
+          </button>
+          <button class="field-tab" type="button" data-field="fabric" aria-pressed="false">
+            <span class="field-tab__number">04</span><span class="field-tab__name">Fabric of Society</span>
+          </button>
+        </div>
+
+        <div class="field-readout" aria-live="polite" aria-atomic="true">
+          <div class="field-readout__label"><span class="readout-dot"></span><span id="readout-category">FIELD 01 / LISTENING</span></div>
+          <p id="readout-question" class="field-readout__question">What can the everyday sound of a city tell us about belonging?</p>
+          <p id="readout-description" class="field-readout__description">Listen for the rhythms, noise, silence and memory held in urban soundscapes.</p>
+        </div>
+        <p class="instrument-footnote">Select a field · follow a question · stay curious</p>
+      </div>
+    </section>
+
+    <!-- THE FOUR LAB DOSSIERS -->
+    <section class="labs-dossiers" aria-labelledby="dossiers-title">
+      <div class="dossiers-heading">
+        <div>
+          <p class="eyebrow"><span class="eyebrow__line"></span> Four practices / one ecosystem</p>
+          <h2 id="dossiers-title">The labs, <em>in detail.</em></h2>
+        </div>
+        <p>Each lab has its own material and methods. Together, they make room for forms of knowledge that are collective, situated and still unfolding.</p>
+      </div>
+
+      <article class="lab-dossier lab-dossier--sonic reveal" id="sonic" data-dossier="sonic">
+        <div class="lab-dossier__visual">
+          <div class="dossier-figure dossier-figure--sonic" aria-hidden="true">
+            <div class="sonic-rings"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+            <span class="figure-coordinate">05°33' N<br>00°10' W</span><span class="figure-caption">LISTENING STUDY / 001</span>
+          </div>
+          <p class="figure-note">Fig. 01 — Listening as method. Field photograph and credit to follow.</p>
+        </div>
+        <div class="lab-dossier__copy">
+          <div class="dossier-meta"><span>LAB 01</span><span>Sound / Memory / Belonging</span></div>
+          <h3>Urban Sonic <em>Lab</em></h3>
+          <p class="dossier-abstract">Exploring the soundscapes of the city as data, archive and method. The lab listens to the rhythms of everyday life, tracing how movement, noise, silence and memory shape belonging and urban identity.</p>
+          <dl class="dossier-facts">
+            <div><dt>Approach</dt><dd>Sound as data, archive and method.</dd></div>
+            <div><dt>Listens to</dt><dd>Movement, noise, silence and memory.</dd></div>
+            <div><dt>Asks</dt><dd>How these shape belonging and urban identity.</dd></div>
+            <div><dt>Current inquiry</dt><dd class="tbc">To be confirmed</dd></div>
+            <div><dt>Led by</dt><dd class="tbc">Name and collaborators to be confirmed</dd></div>
+          </dl>
+        </div>
+      </article>
+
+      <article class="lab-dossier lab-dossier--ground reveal" id="ground-works" data-dossier="ground">
+        <div class="lab-dossier__visual">
+          <div class="dossier-figure dossier-figure--ground" aria-hidden="true">
+            <div class="ground-contours"></div>
+            <span class="ground-marker ground-marker--one"></span><span class="ground-marker ground-marker--two"></span><span class="ground-marker ground-marker--three"></span>
+            <span class="figure-coordinate">GROUND / SITE STUDY</span><span class="figure-caption">A PLACE IS NEVER EMPTY</span>
+          </div>
+          <p class="figure-note">Fig. 02 — Earth, making and place. Site photograph and credit to follow.</p>
+        </div>
+        <div class="lab-dossier__copy">
+          <div class="dossier-meta"><span>LAB 02</span><span>Place / Making / Resistance</span></div>
+          <h3>Ground <em>Works</em></h3>
+          <p class="dossier-abstract">The lab reclaims the ground as a site of knowledge, collaboration and resistance. It works through public art, community co-design and creative infrastructure building, drawing together communities, artisans, artists and urban designers to reimagine how the city is built.</p>
+          <dl class="dossier-facts">
+            <div><dt>Approach</dt><dd>Public art, community co-design and creative infrastructure.</dd></div>
+            <div><dt>Works with</dt><dd>Communities, artisans, artists and urban designers.</dd></div>
+            <div><dt>Asks</dt><dd>How the ground can hold knowledge, collaboration and resistance.</dd></div>
+            <div><dt>Current inquiry</dt><dd class="tbc">To be confirmed</dd></div>
+            <div><dt>Led by</dt><dd class="tbc">Name and collaborators to be confirmed</dd></div>
+          </dl>
+        </div>
+      </article>
+
+      <article class="lab-dossier lab-dossier--ai reveal" id="ai-commons" data-dossier="ai">
+        <div class="lab-dossier__visual">
+          <div class="dossier-figure dossier-figure--ai" aria-hidden="true">
+            <svg viewBox="0 0 420 380" class="ai-network">
+              <g class="ai-network__lines"><path d="M60 80L150 45L228 100L350 58M150 45L118 160L228 100L300 200L365 270M118 160L50 250L160 310L300 200L230 340M50 250L118 160L230 340M160 310L365 270M228 100L230 340M60 80L50 250M350 58L300 200"/></g>
+              <g class="ai-network__nodes"><circle cx="60" cy="80" r="5"/><circle cx="150" cy="45" r="5"/><circle cx="228" cy="100" r="7"/><circle cx="350" cy="58" r="5"/><circle cx="118" cy="160" r="6"/><circle cx="300" cy="200" r="7"/><circle cx="50" cy="250" r="5"/><circle cx="160" cy="310" r="6"/><circle cx="365" cy="270" r="5"/><circle cx="230" cy="340" r="5"/></g>
+            </svg>
+            <span class="figure-coordinate">PUBLIC KNOWLEDGE / 003</span><span class="figure-caption">AMPLIFY, DO NOT EXTRACT</span>
+          </div>
+          <p class="figure-note">Fig. 03 — A commons as a network, not a centre. Working notes to follow.</p>
+        </div>
+        <div class="lab-dossier__copy">
+          <div class="dossier-meta"><span>LAB 03</span><span>Technology / Memory / Access</span></div>
+          <h3>AI <em>Commons</em></h3>
+          <p class="dossier-abstract">A shared space for experimenting with artificial intelligence as a public tool. It seeks to decentralise digital knowledge, using AI to amplify local narratives, collective memory and community-led problem solving rather than extract from them.</p>
+          <dl class="dossier-facts">
+            <div><dt>Approach</dt><dd>Artificial intelligence as a public tool, with digital knowledge decentralised.</dd></div>
+            <div><dt>Amplifies</dt><dd>Local narratives, collective memory and community-led problem solving.</dd></div>
+            <div><dt>Stance</dt><dd>To amplify rather than extract.</dd></div>
+            <div><dt>Current inquiry</dt><dd class="tbc">To be confirmed</dd></div>
+            <div><dt>Led by</dt><dd class="tbc">Name and collaborators to be confirmed</dd></div>
+          </dl>
+        </div>
+      </article>
+
+      <article class="lab-dossier lab-dossier--fabric reveal" id="fabric" data-dossier="fabric">
+        <div class="lab-dossier__visual">
+          <div class="dossier-figure dossier-figure--fabric" aria-hidden="true">
+            <div class="fabric-weave"></div>
+            <span class="figure-coordinate">MATERIAL CULTURE / 004</span><span class="figure-caption">THREADS HOLD STORIES</span>
+          </div>
+          <p class="figure-note">Fig. 04 — A weave in progress. Loom photograph and maker credit to follow.</p>
+        </div>
+        <div class="lab-dossier__copy">
+          <div class="dossier-meta"><span>LAB 04</span><span>Textile / Care / Migration</span></div>
+          <h3>Fabric of <em>Society</em></h3>
+          <p class="dossier-abstract">Exploring textiles, craft and material culture as social infrastructure. The lab threads together making and meaning, reflecting on how fabric, both literal and symbolic, holds histories of migration, care and collaboration across generations.</p>
+          <dl class="dossier-facts">
+            <div><dt>Material</dt><dd>Textiles, craft and material culture.</dd></div>
+            <div><dt>Holds</dt><dd>Histories of migration, care and collaboration across generations.</dd></div>
+            <div><dt>Asks</dt><dd>How making and meaning thread together.</dd></div>
+            <div><dt>Current inquiry</dt><dd class="tbc">To be confirmed</dd></div>
+            <div><dt>Led by</dt><dd class="tbc">Name and collaborators to be confirmed</dd></div>
+          </dl>
+        </div>
+      </article>
+    </section>
+
+    <!-- SHARED METHOD -->
+    <section class="labs-method" id="shared-method">
+      <div class="method__inner">
+
+        <header class="method__header">
+          <div class="method__eyebrow">
+            <span>OUR SHARED METHOD</span>
+            <span>ACCRA, GHANA · 01—04</span>
+          </div>
+
+          <div class="method__heading">
+            <h2>
+              Trust, reciprocity<br />
+              <em>and shared care.</em>
+            </h2>
+
+            <div class="method__intro">
+              <span class="method__asterisk" aria-hidden="true">✳</span>
+              <p>
+                Research is not something we extract from a place.
+                It is something we build with the people who live,
+                work, make and imagine it.
+              </p>
+            </div>
+          </div>
+
+          <div class="method__rule">
+            <span>HOW WE WORK</span>
+            <span>AN OPEN, EVOLVING PRACTICE</span>
+          </div>
+        </header>
+
+        <div class="method__grid">
+
+          <article class="method-card method-card--cycle">
+            <div class="method-card__top">
+              <span class="method-card__number">01</span>
+              <span class="method-card__symbol" aria-hidden="true">↻</span>
+            </div>
+            <p class="method-card__label">TIME & CONTINUITY</p>
+            <h3>A practice that stays.</h3>
+            <p class="method-card__description">
+              Each lab runs on a minimum two-year cycle. Our work
+              grows around community needs, not the short timelines
+              of temporary funding.
+            </p>
+            <div class="method-card__foot">
+              <span>MINIMUM DURATION</span>
+              <strong>02 YEARS +</strong>
+            </div>
+          </article>
+
+          <article class="method-card method-card--open">
+            <div class="method-card__top">
+              <span class="method-card__number">02</span>
+              <span class="method-card__symbol" aria-hidden="true">◎</span>
+            </div>
+            <p class="method-card__label">PUBLIC PARTICIPATION</p>
+            <h3>Come curious.</h3>
+            <p class="method-card__description">
+              Once a month, our doors open for people to meet,
+              explore an idea, try a process or simply see what
+              is taking shape.
+            </p>
+            <div class="method-card__foot">
+              <span>OPEN LAB HOURS</span>
+              <strong>ONE DAY / MONTH</strong>
+            </div>
+          </article>
+
+          <article class="method-card method-card--projects">
+            <div class="method-card__top">
+              <span class="method-card__number">03</span>
+              <span class="method-card__symbol" aria-hidden="true">⌁</span>
+            </div>
+            <p class="method-card__label">COLLECTIVE PRACTICE</p>
+            <h3>Make things together.</h3>
+            <p class="method-card__description">
+              Project hours give lab members dedicated time to
+              experiment, exchange knowledge and develop work
+              through focused collaboration.
+            </p>
+            <div class="method-card__foot">
+              <span>FORMAT</span>
+              <strong>MEMBER SESSIONS</strong>
+            </div>
+          </article>
+
+          <article class="method-card method-card--resources">
+            <div class="method-card__top">
+              <span class="method-card__number">04</span>
+              <span class="method-card__symbol" aria-hidden="true">＋</span>
+            </div>
+            <p class="method-card__label">SHARED RESOURCES</p>
+            <h3>Knowledge in circulation.</h3>
+            <p class="method-card__description">
+              A shared workspace, a Library of Things and practical
+              workshops make tools and knowledge more accessible —
+              from field recorders and cameras to dye kits.
+            </p>
+            <div class="method-card__foot">
+              <span>AVAILABLE TO SHARE</span>
+              <strong>TOOLS · SPACE · SKILLS</strong>
+            </div>
+          </article>
+
+        </div>
+
+        <footer class="method__closing">
+          <span class="method__closing-mark" aria-hidden="true">Ɛ</span>
+          <p>
+            The method is never fixed.
+            <em>It grows through the relationships we keep.</em>
+          </p>
+          <span class="method__closing-note">A LIVING PRACTICE, NOT A FIXED FORMULA</span>
+        </footer>
+
+      </div>
+    </section>
+
+  </main>
+
+<!-- ============ FOOTER ============ -->
+<div data-include="/partials/nav-footer.html"></div>
+<script src="/js/include.js"></script>
+
+  <script src="/js/main.js"></script>
+  <script src="/js/nav.js"></script>
+  <script src="/js/labs.js"></script>
+</body>
+</html>

@@ -1,0 +1,644 @@
+
+/* ============================================
+   ƐDAN — OUR STORY
+   Full-width photographic opening + editorial
+   story chapters
+   ============================================ */
+
+
+/* --------------------------------------------
+   01. SECTION FOUNDATION
+   -------------------------------------------- */
+
+.os {
+  --os-paper: #f3ecdf;
+  --os-paper-light: #faf6ed;
+  --os-paper-dark: #e6dac6;
+  --os-ink: #302e29;
+  --os-pencil: #82796a;
+  --os-peach: #ddb29a;
+  --os-sun: #f3dd82;
+
+  width: 100%;
+  overflow: clip;
+  background: var(--os-paper);
+  color: var(--os-ink);
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+.os *,
+.os *::before,
+.os *::after {
+  box-sizing: border-box;
+}
+
+.os img {
+  display: block;
+  max-width: 100%;
+}
+
+.os figure,
+.os p,
+.os h1,
+.os h2 {
+  margin-top: 0;
+}
+
+
+/* --------------------------------------------
+   02. OPENING HERO
+   -------------------------------------------- */
+
+.os__hero {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  place-items: center;
+  width: 100%;
+  min-height: clamp(580px, 82svh, 850px);
+  overflow: hidden;
+  background: var(--os-ink);
+  color: var(--os-paper-light);
+}
+
+.os__hero-image {
+  position: absolute;
+  z-index: -2;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  object-fit: cover;
+  object-position: center 50%;
+}
+
+.os__hero-overlay {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(32, 29, 25, 0.35) 0%,
+    rgba(32, 29, 25, 0.38) 40%,
+    rgba(32, 29, 25, 0.57) 100%
+  );
+}
+
+.os__hero-content {
+  width: min(850px, 86%);
+  margin-inline: auto;
+  padding: 100px 0;
+  text-align: center;
+}
+
+.os__hero-eyebrow {
+  margin: 0 0 30px;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.85rem;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--os-paper-light);
+}
+
+.os__hero-title {
+  margin: 0;
+  font-size: clamp(3.2rem, 5.8vw, 6.4rem);
+  font-weight: 400;
+  line-height: 0.98;
+  letter-spacing: -0.055em;
+  color: var(--os-paper-light);
+  text-wrap: balance;
+}
+
+.os__hero-intro {
+  width: min(620px, 100%);
+  margin: 30px auto 0;
+  font-size: clamp(1rem, 1.2vw, 1.15rem);
+  font-weight: 400;
+  line-height: 1.75;
+  color: var(--os-paper-light);
+  text-wrap: pretty;
+}
+
+
+/* --------------------------------------------
+   03. STORY CHAPTERS WRAPPER
+   -------------------------------------------- */
+
+.os__chapters {
+  width: min(1440px, 100%);
+  margin-inline: auto;
+  padding: clamp(72px, 10vw, 140px)
+    clamp(24px, 7vw, 100px)
+    clamp(64px, 9vw, 120px);
+}
+
+
+/* --------------------------------------------
+   04. INDIVIDUAL CHAPTERS
+   -------------------------------------------- */
+
+.os__chapter {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: center;
+  gap: clamp(40px, 7vw, 100px);
+  margin: 0 0 clamp(100px, 14vw, 190px);
+}
+
+.os__chapter:last-of-type {
+  margin-bottom: 0;
+}
+
+.os__chapter-copy {
+  min-width: 0;
+  width: 100%;
+  max-width: 520px;
+  margin-inline: auto;
+}
+
+.os__eyebrow {
+  margin: 0 0 26px;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.85rem;
+  font-weight: 400;
+  line-height: 1.6;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--os-pencil);
+}
+
+.os__chapter-title {
+  margin: 0 0 30px;
+  font-size: clamp(2.5rem, 3.5vw, 3.5rem);
+  font-weight: 400;
+  line-height: 1.04;
+  letter-spacing: -0.045em;
+  color: var(--os-ink);
+  text-wrap: balance;
+}
+
+.os__text {
+  width: 100%;
+  max-width: 490px;
+}
+
+.os__text p {
+  margin: 0 0 20px;
+  font-size: clamp(1rem, 1.2vw, 1.15rem);
+  font-weight: 400;
+  line-height: 1.85;
+  color: var(--os-ink);
+}
+
+.os__text p:last-child {
+  margin-bottom: 0;
+}
+
+
+/* --------------------------------------------
+   05. CHAPTER IMAGES
+   -------------------------------------------- */
+
+.os__chapter-media {
+  position: relative;
+  min-width: 0;
+  width: 100%;
+  margin: 0;
+}
+
+.os__image {
+  width: 100%;
+  height: 100%;
+  min-height: 400px;
+  max-height: 660px;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: center;
+}
+
+.os__caption {
+  margin-top: 14px;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.72rem;
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--os-pencil);
+}
+
+
+/* --------------------------------------------
+   06. CHAPTER 01 — THE BEGINNING
+   Text left, image right
+   -------------------------------------------- */
+
+.os__b1 .os__chapter-copy {
+  order: 1;
+}
+
+.os__b1-media {
+  order: 2;
+  padding-top: 30px;
+}
+
+.os__b1-media .os__image {
+  object-position: center;
+}
+
+
+/* --------------------------------------------
+   07. CHAPTER 02 — REIMAGINING THE SPACE
+   Image left, text right
+   -------------------------------------------- */
+
+.os__b2-media {
+  order: 1;
+  padding-bottom: 30px;
+}
+
+.os__b2 .os__chapter-copy {
+  order: 2;
+}
+
+.os__b2-media .os__image {
+  aspect-ratio: 4 / 5;
+  object-position: center;
+}
+
+
+/* --------------------------------------------
+   08. CHAPTER 03 — ROOTED IN COMMUNITY
+   Text left, image right
+   -------------------------------------------- */
+
+.os__b3 .os__chapter-copy {
+  order: 1;
+}
+
+.os__b3-media {
+  order: 2;
+  padding-top: 20px;
+}
+
+.os__b3-media .os__image {
+  aspect-ratio: 4 / 5;
+  object-position: center;
+}
+
+
+/* --------------------------------------------
+   09. CLOSING STATEMENT
+   -------------------------------------------- */
+
+.os__closing {
+  width: min(800px, 100%);
+  margin: clamp(10px, 5vw, 19px) auto 0;
+  padding: clamp(28px, 5vw, 60px) 0 0;
+  text-align: center;
+}
+
+.os__closing p {
+  margin: 0;
+  font-size: clamp(1.5rem, 2.8vw, 2.6rem);
+  font-weight: 400;
+  line-height: 1.3;
+  letter-spacing: -0.035em;
+  color: var(--os-ink);
+  text-wrap: balance;
+}
+
+
+/* --------------------------------------------
+   10. TABLET
+   -------------------------------------------- */
+
+@media (max-width: 900px) {
+  .os__hero {
+    min-height: 680px;
+    min-height: 78svh;
+  }
+
+  .os__hero-content {
+    width: min(700px, 88%);
+  }
+
+  .os__chapters {
+    padding-inline: clamp(28px, 5vw, 48px);
+  }
+
+  .os__chapter {
+    gap: clamp(28px, 4vw, 44px);
+    margin-bottom: 120px;
+  }
+
+  .os__chapter-title {
+    font-size: clamp(2.4rem, 5vw, 3.2rem);
+  }
+
+  .os__text p {
+    font-size: 1rem;
+    line-height: 1.8;
+  }
+
+  .os__image {
+    min-height: 340px;
+  }
+}
+
+
+/* --------------------------------------------
+   11. MOBILE
+   -------------------------------------------- */
+
+@media (max-width: 650px) {
+  .os__hero {
+    min-height: 650px;
+    min-height: 82svh;
+  }
+
+  .os__hero-image {
+    object-position: center;
+  }
+
+  .os__hero-overlay {
+    background: linear-gradient(
+      180deg,
+      rgba(32, 29, 25, 0.36) 0%,
+      rgba(32, 29, 25, 0.46) 50%,
+      rgba(32, 29, 25, 0.62) 100%
+    );
+  }
+
+  .os__hero-content {
+    width: 88%;
+    padding: 76px 0;
+  }
+
+  .os__hero-eyebrow {
+    margin-bottom: 24px;
+    font-size: 0.75rem;
+    letter-spacing: 0.14em;
+  }
+
+  .os__hero-title {
+    font-size: clamp(3rem, 10vw, 4.5rem);
+    line-height: 1;
+  }
+
+  .os__hero-intro {
+    max-width: 460px;
+    margin-top: 24px;
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+
+  .os__chapters {
+    padding: 76px 24px 70px;
+  }
+
+  .os__chapter {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 30px;
+    margin-bottom: 94px;
+  }
+
+  .os__chapter-copy,
+  .os__chapter-media {
+    order: initial;
+    max-width: none;
+  }
+
+  .os__eyebrow {
+    margin-bottom: 20px;
+    font-size: 0.75rem;
+    line-height: 1.6;
+  }
+
+  .os__chapter-title {
+    margin-bottom: 24px;
+    font-size: clamp(2.5rem, 9vw, 3.25rem);
+    line-height: 1.04;
+  }
+
+  .os__text {
+    max-width: none;
+  }
+
+  .os__text p {
+    margin-bottom: 18px;
+    font-size: 1rem;
+    line-height: 1.8;
+  }
+
+  .os__chapter-media {
+    padding: 0;
+  }
+
+  .os__image {
+    min-height: 0;
+    max-height: none;
+    aspect-ratio: 4 / 5;
+  }
+
+  .os__caption {
+    margin-top: 12px;
+    font-size: 0.68rem;
+  }
+
+  .os__closing {
+    margin-top: 20px;
+    padding-top: 20px;
+  }
+
+  .os__closing p {
+    font-size: clamp(1.6rem, 6vw, 2.2rem);
+    line-height: 1.35;
+  }
+}
+
+
+/* --------------------------------------------
+   12. SMALL MOBILE
+   -------------------------------------------- */
+
+@media (max-width: 420px) {
+  .os__hero {
+    min-height: 620px;
+    min-height: 84svh;
+  }
+
+  .os__hero-content {
+    width: 88%;
+    padding: 64px 0;
+  }
+
+  .os__hero-title {
+    font-size: clamp(2.7rem, 11vw, 3.4rem);
+  }
+
+  .os__hero-intro {
+    font-size: 0.96rem;
+    line-height: 1.65;
+  }
+
+  .os__chapters {
+    padding-inline: 20px;
+  }
+
+  .os__chapter-title {
+    font-size: clamp(2.35rem, 10vw, 2.8rem);
+  }
+}
+
+
+/* --------------------------------------------
+   13. REDUCED MOTION
+   -------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+  .os *,
+  .os *::before,
+  .os *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+.os .os__hero-title {
+  font-size: 5rem;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+
+/* OUR STORY — WIDER EDITORIAL LAYOUT */
+
+.os__chapters {
+  width: 100%;
+  max-width: 1600px;
+  padding-left: clamp(40px, 5vw, 80px);
+  padding-right: clamp(40px, 5vw, 80px);
+}
+
+.os__chapter {
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  gap: clamp(48px, 7vw, 110px);
+  margin-bottom: clamp(120px, 15vw, 200px);
+}
+
+.os__chapter-copy {
+  width: 100%;
+  max-width: 620px;
+}
+
+.os__text {
+  max-width: 580px;
+}
+
+.os__text p {
+  font-size: clamp(1.05rem, 1.25vw, 1.2rem);
+  line-height: 1.85;
+}
+
+.os__chapter-title {
+  font-size: clamp(2.8rem, 4vw, 4rem);
+}
+
+.os__chapter-media {
+  width: 100%;
+}
+
+.os__image {
+  width: 100%;
+}
+
+/* Keep the alternating layout on desktop */
+.os__b1 .os__chapter-copy,
+.os__b3 .os__chapter-copy {
+  order: 1;
+}
+
+.os__b1-media,
+.os__b3-media {
+  order: 2;
+}
+
+.os__b2-media {
+  order: 1;
+}
+
+.os__b2 .os__chapter-copy {
+  order: 2;
+}
+
+/* Tablet and mobile retain a comfortable single-column layout */
+@media (max-width: 900px) {
+  .os__chapters {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+
+  .os__chapter {
+    gap: 32px;
+  }
+
+  .os__chapter-title {
+    font-size: clamp(2.4rem, 5vw, 3.2rem);
+  }
+}
+
+@media (max-width: 650px) {
+  .os__chapters {
+    padding: 76px 24px 70px;
+  }
+
+  .os__chapter {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 30px;
+    margin-bottom: 94px;
+  }
+
+  .os__chapter-copy {
+    max-width: none;
+  }
+
+  .os__text {
+    max-width: none;
+  }
+
+  .os__text p {
+    font-size: 1rem;
+  }
+
+  .os__chapter-title {
+    font-size: clamp(2.5rem, 9vw, 3.25rem);
+  }
+}
+
+/* OUR STORY HERO TITLE — TABLET & MOBILE */
+
+@media (max-width: 900px) {
+  .os .os__hero-title {
+    font-size: clamp(4rem, 7vw, 6rem);
+    line-height: 1.05;
+    letter-spacing: -0.045em;
+  }
+}
+
+@media (max-width: 650px) {
+  .os .os__hero-title {
+    font-size: clamp(4rem, 7vw, 6rem);
+    line-height: 1.1;
+    letter-spacing: -0.04em;
+  }
+}
+
+@media (max-width: 420px) {
+  .os .os__hero-title {
+    font-size: clamp(3rem, 5vw, 6rem);
+  }
+}

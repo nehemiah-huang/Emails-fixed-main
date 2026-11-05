@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Eat — Ɛdan</title>
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" href="/images/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<meta name="description" content="The café at Ɛdan — a place to sit, write, meet and share a meal in Nyaniba Estates, Accra.">
+<link rel="stylesheet" href="/css/base.css">
+<link rel="stylesheet" href="/css/tokens.css">
+<link rel="stylesheet" href="/css/pages/eat.css">
+<link rel="stylesheet" href="/css/footer.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,300..600&display=swap" rel="stylesheet">
+</head>
+<body class="page-eat">
+
+<!-- ============ NAV ============ -->
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-nav" id="siteNav">
+  <a href="/" class="nav-logo">
+    <span>Ɛdan</span>
+  </a>
+  <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+    <span></span><span></span><span></span>
+  </button>
+  <nav class="nav-links" id="navLinks" aria-label="Main">
+      <a href="/">Home</a>
+      <a href="/labs/">Labs</a>
+      <a href="/gather/">Gather</a>
+      <a href="/stay/">Stay</a>
+      <a href="/eat/">Eat</a>
+      <a href="/grow/">Grow</a>
+      <a href="/about/">Who we are</a>
+      <a href="/contact/">Contact</a>
+    </nav>
+  <p class="nav-note" aria-hidden="true">A space for<br>people &amp; ideas</p>
+</header>
+
+  <main id="main">
+    
+  <section class="eat" aria-labelledby="eat-title">
+
+    <!-- Hero -->
+    <header class="eat__hero">
+      <img
+        class="eat__hero-image"
+        src="/images/eat-hero.jpg"
+        alt="The café and garden at Ɛdan"
+      >
+      <div class="eat__hero-content">
+        <p class="eat__eyebrow">FROM THE ƐDAN TABLE</p>
+        <h1 id="eat-title">Eat at Ɛdan.</h1>
+        <p>Good food, made part of the day.</p>
+      </div>
+    </header>
+
+    <div class="eat__inner">
+
+      <!-- Menu introduction -->
+      <header class="eat__menu-intro">
+        <div>
+          <p class="eat__eyebrow">THE MENU</p>
+          <h2>What's on the table.</h2>
+        </div>
+        <p class="eat__menu-note">
+          A little something to eat, a drink to stay for.
+        </p>
+      </header>
+
+      <!-- Category filters -->
+    <nav class="eat__categories" aria-label="Menu categories">
+      <button class="eat__category is-active" data-category="all" aria-pressed="true">Everything</button>
+      <button class="eat__category" data-category="meals" aria-pressed="false">Meals</button>
+      <button class="eat__category" data-category="snacks" aria-pressed="false">Snacks</button>
+      <button class="eat__category" data-category="drinks" aria-pressed="false">Drinks</button>
+    </nav>
+
+      <!-- Featured dishes -->
+      <div class="eat__featured">
+
+        <article class="eat__feature" data-menu-item="jollof">
+          <img src="/images/jollof.webp"
+            alt="Jollof rice served with accompaniments"
+            loading="lazy">
+          <div class="eat__feature-copy">
+            <p class="eat__eyebrow">FROM THE KITCHEN</p>
+            <h3>Jollof rice</h3>
+            <p>A familiar favourite, served with your choice of accompaniment.</p>
+            <div class="eat__item-bottom">
+              <span class="eat__price" data-price-for="jollof">GHS 45.00</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="eat__feature" data-menu-item="seasonal-bowl">
+          <img src="/images/seasonal.jpg"
+            alt="A seasonal bowl prepared with fresh ingredients"
+            loading="lazy">
+          <div class="eat__feature-copy">
+            <p class="eat__eyebrow">SOMETHING FRESH</p>
+            <h3>Seasonal bowl</h3>
+            <p>A simple bowl built around seasonal ingredients.</p>
+            <div class="eat__item-bottom">
+              <span class="eat__price" data-price-for="seasonal-bowl">GHS 40.00</span>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- Dynamic menu -->
+      <section class="eat__menu" aria-label="Available menu items">
+        <div class="eat__menu-heading">
+          <h2 id="eat-category-title">The menu</h2>
+          <p>Made for the moment.</p>
+        </div>
+
+        <div class="eat__menu-list" id="eat-menu-list">
+          <!-- Items rendered from eat.js -->
+        </div>
+
+        <p class="eat__empty" id="eat-empty" hidden>
+          Nothing here just yet.
+        </p>
+      </section>
+
+      <!-- Practical details -->
+
+      <!-- Full-width moment at Edan -->
+      <section class="eat__interlude" aria-labelledby="eat-interlude-title">
+        <img
+          class="eat__interlude-image"
+          src="/images/garden-eat.jpg"
+          alt="A table in the garden at Ɛdan"
+          loading="lazy"
+        >
+
+        <div class="eat__interlude-overlay" aria-hidden="true"></div>
+
+        <div class="eat__interlude-copy">
+          <p class="eat__eyebrow">A MOMENT AT ƐDAN</p>
+          <h2 id="eat-interlude-title">
+            Stay for a meal.<br>
+            Make room for a conversation.
+          </h2>
+        </div>
+      </section>
+
+
+    </div>
+    
+    <!-- Basket drawer -->
+    <div class="eat__overlay" id="eat-overlay" hidden></div>
+
+    <aside class="eat__basket" id="eat-basket"
+      role="dialog" aria-modal="true"
+      aria-labelledby="eat-basket-title" aria-hidden="true" inert>
+
+      <div class="eat__basket-head">
+        <div>
+          <p class="eat__eyebrow">YOUR SELECTION</p>
+          <h2 id="eat-basket-title">Your basket</h2>
+        </div>
+        <button class="eat__icon-button" id="eat-basket-close"
+          type="button" aria-label="Close basket">×</button>
+      </div>
+
+      <div class="eat__basket-items" id="eat-basket-items"></div>
+
+      <p class="eat__basket-empty" id="eat-basket-empty">
+        Nothing on the table just yet.
+      </p>
+
+      <div class="eat__basket-footer">
+        <div class="eat__subtotal">
+          <span>Subtotal</span>
+          <strong id="eat-subtotal">GHS 0.00</strong>
+        </div>
+        <p class="eat__checkout-note">
+          Any applicable fees will be confirmed before payment.
+        </p>
+        <button class="eat__checkout" id="eat-checkout-open"
+          type="button" disabled>Continue to checkout</button>
+      </div>
+    </aside>
+
+    <!-- Checkout -->
+    <div class="eat__checkout-overlay" id="eat-checkout-overlay" hidden>
+      <section class="eat__checkout-panel" role="dialog"
+        aria-modal="true" aria-labelledby="eat-checkout-title">
+
+        <div class="eat__checkout-head">
+          <div>
+            <p class="eat__eyebrow">ALMOST READY</p>
+            <h2 id="eat-checkout-title">Your order.</h2>
+          </div>
+          <button class="eat__icon-button" id="eat-checkout-close"
+            type="button" aria-label="Close checkout">×</button>
+        </div>
+
+        <form id="eat-checkout-form">
+
+          <label class="eat__field">
+            Your name
+            <input name="customerName" autocomplete="name" required>
+          </label>
+
+          <label class="eat__field">
+            Phone number
+            <input name="phone" type="tel"
+              autocomplete="tel" placeholder="e.g. 024 000 0000" required>
+          </label>
+
+          <fieldset class="eat__choice">
+            <legend>How would you like your order?</legend>
+            <label>
+              <input type="radio" name="fulfilment"
+                value="dine_in" checked>
+              Dine in
+            </label>
+            <label>
+              <input type="radio" name="fulfilment"
+                value="takeaway">
+              Takeaway
+            </label>
+          </fieldset>
+
+          <label class="eat__field" id="eat-table-field">
+            Table number <span>(if known)</span>
+            <input name="tableNumber" placeholder="Optional">
+          </label>
+
+          <fieldset class="eat__choice">
+            <legend>Payment</legend>
+            <label>
+              <input type="radio" name="paymentMethod"
+                value="paystack" checked>
+              Pay online
+            </label>
+            <label>
+              <input type="radio" name="paymentMethod"
+                value="at_cafe">
+              Pay at the café
+            </label>
+          </fieldset>
+
+          <div class="eat__order-summary">
+            <span>Order total</span>
+            <strong id="eat-checkout-total">GHS 0.00</strong>
+          </div>
+
+          <button class="eat__checkout" id="eat-place-order"
+            type="submit">Place order</button>
+
+          <p class="eat__form-message" id="eat-form-message"
+            role="status" aria-live="polite"></p>
+
+          <p class="eat__checkout-disclaimer">
+            Online payments will be enabled once secure payment processing
+            is connected.
+          </p>
+        </form>
+      </section>
+    </div>
+
+  </section>
+
+  </main>
+
+<!-- ============ FOOTER ============ -->
+<div data-include="/partials/nav-footer.html"></div>
+<script src="/js/include.js"></script>
+
+  <script src="/js/main.js"></script>
+  <script src="/js/nav.js"></script>
+  <script src="/js/eat.js" defer></script>
+</body>
+</html>

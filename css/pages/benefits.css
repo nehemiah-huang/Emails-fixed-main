@@ -1,0 +1,223 @@
+/* =====================================================================
+   GATHER: WHAT COMES WITH IT. Prefix: wc
+   Self-contained: vars live on .wc, nothing relies on a body class.
+   ===================================================================== */
+
+.wc{
+  --wc-ink:#1f1913;
+  --wc-text:#2a221a;
+  --wc-head:#1f1913;                    /* mockup headline is dark green; brief says brown-black. Change here to switch */
+  --wc-accent:#b5694a;                  /* numbers + closing rule */
+  --wc-line:#a65f43;                    /* drawing */
+  --wc-pt:#3a352d;                      /* drawing points */
+  --wc-rule:rgba(166,100,70,.38);       /* lines between list rows */
+  --wc-label:#5a5046;
+  --wc-serif:"Newsreader","Iowan Old Style",Georgia,serif;
+  --wc-sans:"Space Grotesk","Helvetica Neue",Arial,sans-serif;
+  --wc-mono:"Space Mono","Courier New",monospace;
+
+  position:relative;
+  background:transparent;
+  color:var(--wc-ink);
+}
+.wc *,
+.wc *::before,
+.wc *::after{box-sizing:border-box}
+
+.wc__board{
+  width:min(100%,120rem);
+  margin-inline:auto;
+  container-type:inline-size;
+}
+.wc__inner{padding:4cqw 0 7cqw}
+.wc__grid{
+  display:grid;
+  grid-template-columns:44cqw 41cqw;
+  column-gap:5cqw;
+  padding-inline-start:6.2cqw;          /* same left edge as the affiliate section */
+  align-items:center;
+}
+
+/* ---------- heading ---------- */
+.wc__eyebrow{
+  display:flex;
+  align-items:center;
+  gap:.9em;
+  margin:0 0 1.4cqw;
+  font-family:var(--wc-mono);
+  font-size:clamp(.8rem,.95cqw,1rem);
+  letter-spacing:.14em;
+  color:var(--wc-ink);
+}
+.wc__eyebrow::before{
+  content:"";
+  width:1.6em;
+  height:1px;
+  background:currentColor;
+}
+.wc__title{
+  margin:0 0 2.4cqw;
+  font-family:var(--wc-serif);
+  font-weight:600;
+  font-size:clamp(2.25rem,3.5cqw,4.5rem);
+  line-height:1;
+  letter-spacing:-.03em;
+  text-transform:none;
+  font-optical-sizing:none;
+  font-variation-settings:"opsz" 53;
+  color:var(--wc-head);
+}
+
+/* ---------- list ---------- */
+.wc__list{
+  list-style:none;
+  margin:0;
+  padding:0;
+}
+.wc__item{
+  display:grid;
+  grid-template-columns:4.2cqw minmax(0,1fr);
+  align-items:start;
+  padding:1.15cqw 0;
+}
+.wc__item:first-child{padding-top:0}
+.wc__item + .wc__item{border-top:1px solid var(--wc-rule)}
+.wc__num{
+  font-family:var(--wc-sans);
+  font-size:clamp(.95rem,1.05cqw,1.2rem);
+  line-height:1.7;
+  letter-spacing:.04em;
+  color:var(--wc-accent);
+}
+.wc__txt{
+  margin:0;
+  max-width:36cqw;
+  font-family:var(--wc-sans);
+  font-size:clamp(1rem,1.1cqw,1.3rem);
+  line-height:1.6;
+  color:var(--wc-text);
+}
+
+/* ---------- closing line ---------- */
+.wc__note{margin-top:2.4cqw}
+.wc__rule{
+  display:block;
+  width:1.6cqw;
+  min-width:1rem;
+  height:1px;
+  margin-bottom:.9cqw;
+  background:var(--wc-accent);
+}
+.wc__note p{
+  margin:0;
+  padding-inline-start:4.2cqw;
+  font-family:var(--wc-serif);
+  font-style:italic;
+  font-size:clamp(1rem,1.25cqw,1.4rem);
+  line-height:1.5;
+  color:var(--wc-ink);
+}
+.wc__sent{display:block}
+
+/* ---------- drawing ---------- */
+/* its own container: labels scale with the drawing */
+.wc__visual{
+  position:relative;
+  container-type:inline-size;
+  aspect-ratio:560 / 450;
+  width:100%;
+}
+.wc__art{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  overflow:visible;
+}
+.wc__rust{
+  fill:none;
+  stroke:var(--wc-line);
+  stroke-width:1.25;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+}
+.wc__thin{stroke-width:.85}
+.wc__dash{
+  fill:none;
+  stroke:var(--wc-line);
+  stroke-width:.9;
+  stroke-dasharray:3 4;
+  opacity:.8;
+}
+.wc__dots{stroke-dasharray:1 3}
+.wc__ink-line{
+  fill:none;
+  stroke:var(--wc-pt);
+  stroke-width:.8;
+  stroke-linecap:round;
+}
+.wc__pt{fill:var(--wc-pt)}
+.wc__pt--rust{fill:var(--wc-line)}
+
+.wc__label{
+  position:absolute;
+  font-family:var(--wc-mono);
+  font-size:clamp(.62rem,2cqw,.95rem);
+  line-height:1;
+  letter-spacing:.2em;
+  text-transform:uppercase;
+  white-space:nowrap;
+  color:var(--wc-label);
+}
+.wc__label--space{left:11.8%;top:11.6%}
+.wc__label--exchange{right:.5%;top:20.7%}
+.wc__label--shared{left:.4%;top:76.6%}
+
+/* ---------- tablet + phone: one column ---------- */
+/* the board stops being a container here, so every cqw outside
+   the drawing is replaced with rem / vw / % */
+@media (max-width:860px){
+  .wc__board{
+    container-type:normal;
+    max-width:34rem;
+  }
+  .wc__inner{padding:2.5rem 7% 3.5rem}   /* side space: 7%, same as the affiliate section */
+
+  /* the copy wrapper dissolves so the drawing can sit between
+     the list and the closing line */
+  .wc__grid{
+    display:flex;
+    flex-direction:column;
+    padding-inline-start:0;
+  }
+  .wc__copy{display:contents}
+
+  .wc__eyebrow{font-size:.85rem;margin:0 0 1rem}
+  .wc__title{
+    font-size:clamp(2rem,9.4vw,3.2rem);   /* stays on one line */
+    margin:0 0 1.5rem;
+  }
+
+  .wc__item{
+    grid-template-columns:3rem minmax(0,1fr);
+    padding:1.1rem 0;
+  }
+  .wc__num{font-size:1rem}
+  .wc__txt{
+    max-width:none;
+    font-size:1rem;
+    line-height:1.65;
+  }
+
+  .wc__visual{order:1;margin:1.75rem 0 1.5rem}
+
+  .wc__note{order:2;margin-top:0}
+  .wc__rule{
+    width:2rem;
+    margin:0 0 .9rem 4.5%;
+  }
+  .wc__note p{
+    padding-inline-start:4.5%;
+    font-size:1.05rem;
+  }
+}

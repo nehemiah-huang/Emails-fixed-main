@@ -1,0 +1,106 @@
+<!-- footer styles load with the footer, so no page needs its own <link> for them -->
+<link rel="stylesheet" href="/css/footer.css">
+
+<!-- ============ GLOBAL FOOTER (prefix: ft) ============ -->
+<footer class="ft" aria-labelledby="ft-brand">
+
+  <!-- skyline: dark ground is part of the same SVG, so there is no seam -->
+  
+
+  <div class="ft__body">
+    <div class="ft__board">
+      <div class="ft__inner">
+
+        <div class="ft__cols">
+
+          <!-- brand + contact + social -->
+          <div class="ft__col ft__col--brand">
+            <p class="ft__brand" id="ft-brand">Ɛdan</p>
+            <p class="ft__blurb">A creative urban lab in Nyaniba Estates, Accra. Creativity as urban infrastructure.</p>
+
+            <ul class="ft__contact">
+              <li><a href="tel:+233257040400">+233 25 704 0400</a></li>
+              <li><a href="mailto:info@edan.studio">info@edan.studio</a></li>
+            </ul>
+
+            <!-- [PLACEHOLDER] social URLs: replace each href="#" with the real account -->
+                        <ul class="ft__social">
+              <li>
+                <a href="#" aria-label="Instagram" target="_blank" rel="noopener">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r=".6"/></svg>
+                </a>
+              </li>
+              
+              <li>
+                <a href="#" aria-label="LinkedIn" target="_blank" rel="noopener">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                </a>
+              </li>
+              <li>
+                <a href="https://wa.me/233257040400" aria-label="WhatsApp" target="_blank" rel="noopener">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22z"/><path d="M9 9.5c0 3 2.5 5.5 5.5 5.5l1.2-1.6-2-1-.8.8c-.9-.4-1.7-1.2-2.1-2.1l.8-.8-1-2z"/></svg>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <nav class="ft__col" aria-labelledby="ft-explore">
+            <h2 class="ft__label" id="ft-explore">Explore</h2>
+            <ul class="ft__list">
+              <li><a class="ft__link" href="/#why">Why</a></li>
+              <li><a class="ft__link" href="/labs/">Labs</a></li>
+              <li><a class="ft__link" href="/about/">Who we are</a></li>
+              <li><a class="ft__link" href="/gather/">Gather</a></li>
+            </ul>
+          </nav>
+
+          <nav class="ft__col" aria-labelledby="ft-visit">
+            <h2 class="ft__label" id="ft-visit">Visit</h2>
+            <ul class="ft__list">
+              <li><a class="ft__link" href="/stay/">Stay</a></li>
+              <li><a class="ft__link" href="/eat/">Eat</a></li>
+              <li><a class="ft__link" href="/grow/">Grow</a></li>
+              <li><a class="ft__link" href="/contact/">Contact</a></li>
+            </ul>
+          </nav>
+
+          <!-- signup + map -->
+          <div class="ft__col ft__col--connect">
+            <h2 class="ft__label">Stay connected</h2>
+            <!-- [PLACEHOLDER] form action: not wired to any email service yet -->
+            <form class="ft__form" action="#" method="post">
+              <label class="ft__sr" for="ft-email">Email address</label>
+              <input class="ft__input" id="ft-email" type="email" name="email" placeholder="Your email address" autocomplete="email">
+              <button class="ft__send" type="submit" aria-label="Subscribe">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12h17M14 6l6 6-6 6"/></svg>
+              </button>
+            </form>
+
+            <div class="ft__map">
+              <iframe
+                title="Map showing Nyaniba Estates, Accra"
+                src="https://www.google.com/maps?q=Nyaniba+Estates,+Accra,+Ghana&amp;output=embed"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                allowfullscreen></iframe>
+            </div>
+            <a class="ft__maplink" href="https://www.google.com/maps/search/?api=1&amp;query=Nyaniba+Estates+Accra+Ghana" target="_blank" rel="noopener">Open in Google Maps</a>
+          </div>
+
+        </div>
+
+        <div class="ft__bottom">
+          <p>© Ɛdan, 2026. Nyaniba Estates, Accra, Ghana.</p>
+          <!-- [PLACEHOLDER] Privacy and Terms pages do not exist yet -->
+          <ul class="ft__legal">
+            <li><a href="#">Privacy</a></li>
+            <li><a href="#">Terms</a></li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- Live Server only: gives its reload script somewhere safe to go. Delete this line when pasting into Squarespace. -->
+</body>

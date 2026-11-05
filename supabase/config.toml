@@ -1,0 +1,20 @@
+[functions.paystack-webhook]
+verify_jwt = false
+
+[functions.create-payment]
+verify_jwt = true
+
+[functions.payment-receipt]
+verify_jwt = true
+
+[functions.stay-payment]
+verify_jwt = true
+
+[functions.stay-paystack-webhook]
+verify_jwt = false
+
+[functions.membership-submission-email]
+verify_jwt = true
+
+[functions.admin-notifications]
+verify_jwt = true
