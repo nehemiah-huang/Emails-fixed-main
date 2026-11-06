@@ -6,8 +6,8 @@
 (() => {
   "use strict";
 
-  const SUPABASE_URL = "https://tqgjgnohqzmvkakqxhcm.supabase.co";
-  const SUPABASE_PUBLISHABLE_KEY = "sb_publishable_R6DbjHgjZXrJSwVKLKvh0Q_Ks0BFYEV";
+  const SUPABASE_URL = "https://afkegyueanjmktgrsnpn.supabase.co";
+  const SUPABASE_PUBLISHABLE_KEY = "sb_publishable_AY-KPS5F2lxajImeHv83kw_UmMczbGS";
 
   // Folder URLs, from the site root (the site uses /folder/index.html pages)
   const LOGIN_PATH = "/login/";
